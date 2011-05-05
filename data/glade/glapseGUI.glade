@@ -14,6 +14,9 @@
             <property name="label" translatable="yes">Take several screenshots and glue them together</property>
           </object>
           <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">14</property>
             <property name="position">0</property>
           </packing>
         </child>
@@ -146,7 +149,7 @@
                             <property name="right_attach">2</property>
                             <property name="top_attach">3</property>
                             <property name="bottom_attach">4</property>
-                            <property name="x_options">GTK_FILL</property>
+                            <property name="x_options"></property>
                             <property name="y_options"></property>
                           </packing>
                         </child>
@@ -175,6 +178,7 @@
                 </child>
               </object>
               <packing>
+                <property name="padding">4</property>
                 <property name="position">0</property>
               </packing>
             </child>
@@ -323,6 +327,7 @@
                 </child>
               </object>
               <packing>
+                <property name="padding">4</property>
                 <property name="position">1</property>
               </packing>
             </child>
@@ -355,6 +360,7 @@
           </object>
           <packing>
             <property name="expand">False</property>
+            <property name="padding">4</property>
             <property name="position">2</property>
           </packing>
         </child>
