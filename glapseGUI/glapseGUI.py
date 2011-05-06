@@ -4,6 +4,8 @@
 import os
 import gtk
 
+from glapse import glapseMain
+
 class GlapseMainGUI:
     
     def __init__(self):
@@ -35,6 +37,9 @@ class GlapseMainGUI:
         # Connect signals
 	builder.connect_signals(self)
 	
+	# Get controller class
+	self.controller = glapseMain.GlapseMain()
+	
 	# Load logo
 	self.imgLogo.set_from_file(os.path.dirname(__file__) + '/../data/img/glapse-icon-small.png')
 	
@@ -47,6 +52,9 @@ class GlapseMainGUI:
 	self.txtScrOutput.set_text(os.getenv('HOME') + '/glapse-screens')
 	self.txtVideoInput.set_text(os.getenv('HOME') + '/glapse-screens')
 	self.txtVideoOutput.set_text(os.getenv('HOME') + '/glapse-screens/timelapse.mpg')
+	
+	# Disable stop screenshots
+	self.btnScrStop.set_sensitive(False)
 	
     
     def onDestroy(self, widget):
@@ -88,3 +96,23 @@ class GlapseMainGUI:
 	
 	chooser.destroy()
 	
+    def onBtnScrStartClicked(self, widget):
+	# Get options
+	output = self.txtScrOutput.get_text()
+	quality = self.spinScrQuality.get_value()
+	interval = self.spinScrInterval.get_value()
+	
+	# Disable start, enable stop
+	self.btnScrStart.set_sensitive(False)
+	self.btnScrStop.set_sensitive(True)
+	
+	# Call controller
+	self.controller.startScreenShots(output, quality, interval)
+	
+    def onBtnScrStopClicked(self, widget):
+	# Disable stop, enable start
+	self.btnScrStop.set_sensitive(False)
+	self.btnScrStart.set_sensitive(True)
+	
+	# Call controller
+	self.controller.stopScreenShots()
