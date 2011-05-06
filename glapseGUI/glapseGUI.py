@@ -19,20 +19,21 @@ class GlapseMainGUI:
         builder.add_from_file(path)
 		
         # Get objects
-	self.window = builder.get_object("wndGlapse")
-	self.imgLogo = builder.get_object("imgLogo")
-        self.btnScrOutput = builder.get_object("btnScrOutput")
-	self.txtScrOutput = builder.get_object("txtScrOutput")
-        self.spinScrQuality = builder.get_object("spinScrQuality")
-        self.spinScrInterval = builder.get_object("spinScrInterval")
-        self.btnScrStart = builder.get_object("btnScrStart")
-        self.btnScrStop = builder.get_object("btnScrStop")
-        self.btnVideoInput = builder.get_object("btnVideoInput")
-	self.txtVideoInput = builder.get_object("txtVideoInput")
-        self.btnVideoOutput = builder.get_object("btnVideoOutput")
-	self.txtVideoOutput = builder.get_object("txtVideoOutput")
-        self.spinVideoFPS = builder.get_object("spinVideoFPS")
-        self.btnMakeVideo = builder.get_object("btnMakeVideo")
+	self.window = builder.get_object('wndGlapse')
+	self.imgLogo = builder.get_object('imgLogo')
+	self.lblStatus = builder.get_object('lblStatus')
+        self.btnScrOutput = builder.get_object('btnScrOutput')
+	self.txtScrOutput = builder.get_object('txtScrOutput')
+        self.spinScrQuality = builder.get_object('spinScrQuality')
+        self.spinScrInterval = builder.get_object('spinScrInterval')
+        self.btnScrStart = builder.get_object('btnScrStart')
+        self.btnScrStop = builder.get_object('btnScrStop')
+        self.btnVideoInput = builder.get_object('btnVideoInput')
+	self.txtVideoInput = builder.get_object('txtVideoInput')
+        self.btnVideoOutput = builder.get_object('btnVideoOutput')
+	self.txtVideoOutput = builder.get_object('txtVideoOutput')
+        self.spinVideoFPS = builder.get_object('spinVideoFPS')
+        self.btnMakeVideo = builder.get_object('btnMakeVideo')
 		
         # Connect signals
 	builder.connect_signals(self)
@@ -106,6 +107,9 @@ class GlapseMainGUI:
 	self.btnScrStart.set_sensitive(False)
 	self.btnScrStop.set_sensitive(True)
 	
+	# Set status
+	self.lblStatus.set_text('Taking screenshots...')
+	
 	# Call controller
 	self.controller.startScreenShots(output, quality, interval)
 	
@@ -113,6 +117,9 @@ class GlapseMainGUI:
 	# Disable stop, enable start
 	self.btnScrStop.set_sensitive(False)
 	self.btnScrStart.set_sensitive(True)
+	
+	# Set status
+	self.lblStatus.set_text('Idle')
 	
 	# Call controller
 	self.controller.stopScreenShots()
