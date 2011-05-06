@@ -26,7 +26,9 @@ class GlapseMainGUI:
         self.btnScrStart = builder.get_object("btnScrStart")
         self.btnScrStop = builder.get_object("btnScrStop")
         self.btnVideoInput = builder.get_object("btnVideoInput")
+	self.txtVideoInput = builder.get_object("txtVideoInput")
         self.btnVideoOutput = builder.get_object("btnVideoOutput")
+	self.txtVideoOutput = builder.get_object("txtVideoOutput")
         self.spinVideoFPS = builder.get_object("spinVideoFPS")
         self.btnMakeVideo = builder.get_object("btnMakeVideo")
 		
@@ -35,6 +37,17 @@ class GlapseMainGUI:
 	
 	# Load logo
 	self.imgLogo.set_from_file(os.path.dirname(__file__) + '/../data/img/glapse-icon-small.png')
+	
+	# Default spin buttons value
+	self.spinScrInterval.set_value(10);
+	self.spinScrQuality.set_value(80);
+	self.spinVideoFPS.set_value(10);
+	
+	# Default path
+	self.txtScrOutput.set_text(os.getenv('HOME') + '/glapse-screens')
+	self.txtVideoInput.set_text(os.getenv('HOME') + '/glapse-screens')
+	self.txtVideoOutput.set_text(os.getenv('HOME') + '/glapse-screens/timelapse.mpg')
+	
     
     def onDestroy(self, widget):
 		gtk.main_quit()
