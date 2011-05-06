@@ -9,7 +9,18 @@ from glapse import glapseMain
 class GlapseMainGUI:
     
     def __init__(self):
-        # Get Builder
+	
+	# Version
+	self.version = 0.1
+	
+	print ''
+	print 'gLapse v0.1 - Take screenshots, glue them together'
+	print '=================================================='
+	print ''
+	
+	print 'Initialising GUI...'
+	
+	# Get Builder
         builder = gtk.Builder()
         
         # Set path to find Glade file
@@ -60,8 +71,13 @@ class GlapseMainGUI:
 	# Disable stop screenshots
 	self.btnScrStop.set_sensitive(False)
 	
+	print 'GUI Loaded.'
+	
     
     def onDestroy(self, widget):
+	
+	print 'Closing gLapse...'
+	
 	gtk.main_quit()
 		
     def onBtnScrOutputClicked(self, widget):
@@ -117,7 +133,7 @@ class GlapseMainGUI:
 	self.lblStatus.set_text('Taking screenshots...')
 	
 	# Call controller
-	self.controller.startScreenShots(output, quality, interval)
+	self.controller.startScreenshots(output, quality, interval)
 	
     def onBtnScrStopClicked(self, widget):
 	# Disable stop, enable start
@@ -128,7 +144,7 @@ class GlapseMainGUI:
 	self.lblStatus.set_text('Idle')
 	
 	# Call controller
-	self.controller.stopScreenShots()
+	self.controller.stopScreenshots()
     
     def isExecutable(self, filePath):
 	return os.path.exists(filePath) and os.access(filePath, os.X_OK)
