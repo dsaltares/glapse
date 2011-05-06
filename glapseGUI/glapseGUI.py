@@ -34,6 +34,8 @@ class GlapseMainGUI:
 	self.txtVideoOutput = builder.get_object('txtVideoOutput')
         self.spinVideoFPS = builder.get_object('spinVideoFPS')
         self.btnMakeVideo = builder.get_object('btnMakeVideo')
+	
+	self.dlgDependenciesError = builder.get_object('dlgDependenciesError')
 		
         # Connect signals
 	builder.connect_signals(self)
@@ -60,7 +62,7 @@ class GlapseMainGUI:
 	
     
     def onDestroy(self, widget):
-		gtk.main_quit()
+	gtk.main_quit()
 		
     def onBtnScrOutputClicked(self, widget):
 	action =  gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
@@ -127,3 +129,34 @@ class GlapseMainGUI:
 	
 	# Call controller
 	self.controller.stopScreenShots()
+    
+    def isExecutable(self, filePath):
+	return os.path.exists(filePath) and os.access(filePath, os.X_OK)
+	
+    def which(self, program):
+	filePath, fileName = os.path.split(program)
+	
+	if filePath and self.isExecutable(program):
+	    return True
+	else:
+	    for path in os.environ['PATH'].split(os.pathsep):
+		exeFile = os.path.join(path, program)
+		if self.isExecutable(exeFile):
+		    return True
+	
+	return False
+    
+    def checkDependencies(self):
+	# Check wether all dependencies are installed or not
+	dependencies = ('ffmpeg', 'scrot')
+	
+	for dependence in dependencies:
+	    if not self.which(dependence):
+		self.dlgDependenciesError.set_markup(dependence + ' was not found')
+		self.dlgDependenciesError.format_secondary_text('Pleasy, install the package and launch gLapse again')
+		self.dlgDependenciesError.run()
+		self.dlgDependenciesError.destroy()
+		return False
+	
+	return True
+		

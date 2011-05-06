@@ -10,8 +10,9 @@ from glapseGUI import glapseGUI
 def main():
     # Create main window and start application
     glapse = glapseGUI.GlapseMainGUI()
-    glapse.window.show()
-    gtk.main()
+    if glapse.checkDependencies():
+        glapse.window.show()
+        gtk.main()
     
 
 if __name__ == "__main__":
