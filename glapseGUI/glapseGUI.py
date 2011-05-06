@@ -68,7 +68,8 @@ class GlapseMainGUI:
 	title = 'Screenshots output folder'
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
-        
+        chooser.set_current_folder(os.getenv('HOME'))
+	
 	if chooser.run() == gtk.RESPONSE_OK:
             self.txtScrOutput.set_text(chooser.get_filename())
 	
@@ -80,6 +81,7 @@ class GlapseMainGUI:
 	title = 'Video input folder'
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
+	chooser.set_current_folder(os.getenv('HOME'))
         
 	if chooser.run() == gtk.RESPONSE_OK:
             self.txtScrOutput.set_text(chooser.get_filename())
@@ -92,7 +94,8 @@ class GlapseMainGUI:
 	title = 'Video output file'
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
-        
+        chooser.set_current_name(os.getenv('HOME') + 'timelapse.mpg')
+	
 	if chooser.run() == gtk.RESPONSE_OK:
             self.txtScrOutput.set_text(chooser.get_filename())
 	
