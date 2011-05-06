@@ -12,7 +12,7 @@
           <object class="GtkHBox" id="hbox3">
             <property name="visible">True</property>
             <child>
-              <object class="GtkImage" id="image1">
+              <object class="GtkImage" id="imgLogo">
                 <property name="visible">True</property>
                 <property name="stock">gtk-missing-image</property>
               </object>

@@ -18,6 +18,7 @@ class GlapseMainGUI:
 		
         # Get objects
 	self.window = builder.get_object("wndGlapse")
+	self.imgLogo = builder.get_object("imgLogo")
         self.btnScrOutput = builder.get_object("btnScrOutput")
 	self.txtScrOutput = builder.get_object("txtScrOutput")
         self.spinScrQuality = builder.get_object("spinScrQuality")
@@ -31,6 +32,9 @@ class GlapseMainGUI:
 		
         # Connect signals
 	builder.connect_signals(self)
+	
+	# Load logo
+	self.imgLogo.set_from_file(os.path.dirname(__file__) + '/../data/img/glapse-icon-small.png')
     
     def onDestroy(self, widget):
 		gtk.main_quit()
