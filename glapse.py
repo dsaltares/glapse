@@ -9,7 +9,7 @@ from glapseGUI import glapseGUI
 
 def main():
     # Create main window and start application
-    glapse = glapseGUI.glapseGUI()
+    glapse = glapseGUI.GlapseMainGUI()
     glapse.window.show()
     gtk.main()
     

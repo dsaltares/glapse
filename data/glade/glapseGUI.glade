@@ -9,14 +9,28 @@
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
         <child>
-          <object class="GtkLabel" id="lblDescription">
+          <object class="GtkHBox" id="hbox3">
             <property name="visible">True</property>
-            <property name="label" translatable="yes">Take several screenshots and glue them together</property>
+            <child>
+              <object class="GtkImage" id="image1">
+                <property name="visible">True</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblDescription">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Take several screenshots and glue them together</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="padding">14</property>
             <property name="position">0</property>
           </packing>
         </child>
@@ -381,23 +395,17 @@
     <property name="lower">1</property>
     <property name="upper">100</property>
     <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-    <property name="page_size">10</property>
   </object>
   <object class="GtkAdjustment" id="adjScrInterval">
     <property name="value">10</property>
     <property name="lower">1</property>
     <property name="upper">100</property>
     <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-    <property name="page_size">10</property>
   </object>
   <object class="GtkAdjustment" id="adjFPS">
     <property name="value">25</property>
     <property name="lower">1</property>
     <property name="upper">60</property>
     <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-    <property name="page_size">10</property>
   </object>
 </interface>

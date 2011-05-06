@@ -4,7 +4,7 @@
 import os
 import gtk
 
-class glapseGUI:
+class GlapseMainGUI:
     
     def __init__(self):
         # Get Builder
