@@ -4,6 +4,7 @@
 import threading
 import os
 import time
+import re
 
 class GlapseMain:
     
@@ -48,8 +49,16 @@ class GlapseMain:
         # Create thread to run command
         videoThread = threading.Thread(target = self._makeVideoThread, args = (command, gui))
         videoThread.start()
-        #videoThread.join()
-
+    
+    def getPossibleOverwrite(self, output):
+        regex = re.compile('[0-9]{' + str(self.numDigits) + '}.jpg')
+        
+        for f in os.listdir(output):
+            match = regex.match(f)
+            if match != None:
+                return True
+        
+        return False
 
     def _takeScreenshot(self):
         # Run until we're done
