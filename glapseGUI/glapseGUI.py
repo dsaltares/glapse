@@ -46,6 +46,7 @@ class GlapseMainGUI:
         self.spinVideoFPS = builder.get_object('spinVideoFPS')
         self.btnMakeVideo = builder.get_object('btnMakeVideo')
 	
+	
 	self.dlgError = builder.get_object('dlgError')
 	self.msgOverwrite = builder.get_object('msgOverwrite')
 	self.aboutDlg = builder.get_object('aboutDlg')
@@ -86,7 +87,7 @@ class GlapseMainGUI:
     def onBtnScrOutputClicked(self, widget):
 	action =  gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
         buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE, gtk.RESPONSE_OK)
-	title = 'Screenshots output folder'
+	title = _('Screenshots output folder')
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
         chooser.set_current_folder(os.getenv('HOME'))
@@ -99,7 +100,7 @@ class GlapseMainGUI:
     def onBtnVideoInputClicked(self, widget):
 	action =  gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
         buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE, gtk.RESPONSE_OK)
-	title = 'Video input folder'
+	title = _('Video input folder')
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
 	chooser.set_current_folder(os.getenv('HOME'))
@@ -112,7 +113,7 @@ class GlapseMainGUI:
     def onBtnVideoOutputClicked(self, widget):
 	action =  gtk.FILE_CHOOSER_ACTION_SAVE
         buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE, gtk.RESPONSE_OK)
-	title = 'Video output file'
+	title = _('Video output file')
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
         chooser.set_current_folder(os.getenv('HOME'))
@@ -120,7 +121,7 @@ class GlapseMainGUI:
 	
 	fileFilter = gtk.FileFilter()
 	fileFilter.add_pattern('*.mp4')
-	fileFilter.set_name('MP4 files')
+	fileFilter.set_name(_('MP4 files'))
 	
 	chooser.add_filter(fileFilter)
 	
@@ -140,9 +141,9 @@ class GlapseMainGUI:
 	# Check folder existence
 	if not os.path.exists(output):
 	    checkList = False
-	    self.dlgError.set_title('Folder not found')
-	    self.dlgError.set_markup('<b>' + output + ' does not exist</b>')
-	    self.dlgError.format_secondary_text('Pleasy, select a valid output folder')
+	    self.dlgError.set_title(_('Folder not found'))
+	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
+	    self.dlgError.format_secondary_text(_('Pleasy, select a valid output folder'))
 	    self.dlgError.run()
 	    self.dlgError.hide()
 	    
@@ -162,7 +163,7 @@ class GlapseMainGUI:
 	    self.btnScrStop.set_sensitive(True)
 	    
 	    # Set status
-	    self.lblStatus.set_text('Taking screenshots...')
+	    self.lblStatus.set_text(_('Taking screenshots...'))
 	    
 	    # Call controller
 	    self.controller.startScreenshots(output, quality, interval)
@@ -173,7 +174,7 @@ class GlapseMainGUI:
 	self.btnScrStart.set_sensitive(True)
 	
 	# Set status
-	self.lblStatus.set_text('Idle')
+	self.lblStatus.set_text(_('Idle'))
 	
 	# Call controller
 	self.controller.stopScreenshots()
@@ -194,9 +195,9 @@ class GlapseMainGUI:
 	# Check if input folder exists
 	if not os.path.exists(videoInput):
 	    checkList = False
-	    self.dlgError.set_title('Folder not found')
-	    self.dlgError.set_markup('<b>' + output + ' does not exist</b>')
-	    self.dlgError.format_secondary_text('Pleasy, select a valid input folder')
+	    self.dlgError.set_title(_('Folder not found'))
+	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
+	    self.dlgError.format_secondary_text(_('Please, select a valid input folder'))
 	    self.dlgError.run()
 	    self.dlgError.hide()
 	
@@ -204,9 +205,9 @@ class GlapseMainGUI:
 	(outputPath, outputFile) = os.path.split(videoOutput)
 	if not os.path.exists(outputPath):
 	    checkList = False
-	    self.dlgError.set_title('Folder not found')
-	    self.dlgError.set_markup('<b>' + output + ' does not exist</b>')
-	    self.dlgError.format_secondary_text('Pleasy, select a valid output folder')
+	    self.dlgError.set_title(_('Folder not found'))
+	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
+	    self.dlgError.format_secondary_text(_('Please, select a valid input folder'))
 	    self.dlgError.run()
 	    self.dlgError.hide()
 	    
@@ -215,13 +216,13 @@ class GlapseMainGUI:
 	# If everything is right
 	if checkList:
 	    # Chanche status bar
-	    self.lblStatus.set_text('Creating video...')
+	    self.lblStatus.set_text(_('Creating video...'))
 	    # Call controller
 	    self.controller.makeVideo(self, videoInput,videoOutput, videoFPS)
 	
     def onMakeVideoFinished(self):
 	# Chanche status bar
-	self.lblStatus.set_text('Idle')
+	self.lblStatus.set_text(_('Idle'))
     
     def _isExecutable(self, filePath):
 	return os.path.exists(filePath) and os.access(filePath, os.X_OK)
@@ -245,12 +246,11 @@ class GlapseMainGUI:
 	
 	for dependence in dependencies:
 	    if not self._which(dependence):
-		self.dlgError.set_title('Dependencies error')
-		self.dlgError.set_markup('<b>' + dependence + ' was not found</b>')
-		self.dlgError.format_secondary_text('Pleasy, install the package and launch gLapse again')
+		self.dlgError.set_title(_('Dependencies error'))
+		self.dlgError.set_markup(_('<b>%s was not found</b>') % (dependence))
+		self.dlgError.format_secondary_text(_('Please, install the package and launch gLapse again'))
 		self.dlgError.run()
 		self.dlgError.destroy()
 		return False
 	
 	return True
-		
