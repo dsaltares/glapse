@@ -12,6 +12,7 @@ def main():
     glapse = glapseGUI.GlapseMainGUI()
     if glapse.checkDependencies():
         glapse.window.show()
+        gtk.gdk.threads_init()
         gtk.main()
     
 
