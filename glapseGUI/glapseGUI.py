@@ -68,7 +68,7 @@ class GlapseMainGUI:
 	# Default path
 	self.txtScrOutput.set_text(os.getenv('HOME') + '/glapse-screens')
 	self.txtVideoInput.set_text(os.getenv('HOME') + '/glapse-screens')
-	self.txtVideoOutput.set_text(os.getenv('HOME') + '/glapse-screens/timelapse.mpg')
+	self.txtVideoOutput.set_text(os.getenv('HOME') + '/glapse-screens/timelapse.mp4')
 	
 	# Disable stop screenshots
 	self.btnScrStop.set_sensitive(False)
@@ -114,7 +114,7 @@ class GlapseMainGUI:
 	title = 'Video output file'
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
-        chooser.set_current_name(os.getenv('HOME') + 'timelapse.mpg')
+        chooser.set_current_name(os.getenv('HOME') + os.sep + 'timelapse.mp4')
 	
 	if chooser.run() == gtk.RESPONSE_OK:
             self.txtScrOutput.set_text(chooser.get_filename())
@@ -152,6 +152,17 @@ class GlapseMainGUI:
 	#Show about dialog
 	self.aboutDlg.run()
 	self.aboutDlg.hide()
+	
+    def onBtnMakeVideoClicked(self, widget):
+	# Chanche status bar
+	self.lblStatus.set_text('Creating video...')
+	
+	# Call controller
+	self.controller.makeVideo(self, self.txtVideoInput.get_text(), self.txtVideoOutput.get_text(), self.spinVideoFPS.get_value())
+	
+    def onMakeVideoFinished(self):
+	# Chanche status bar
+	self.lblStatus.set_text('Idle')
     
     def isExecutable(self, filePath):
 	return os.path.exists(filePath) and os.access(filePath, os.X_OK)
