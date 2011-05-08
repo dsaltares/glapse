@@ -105,7 +105,7 @@ class GlapseMainGUI:
 	chooser.set_current_folder(os.getenv('HOME'))
         
 	if chooser.run() == gtk.RESPONSE_OK:
-            self.txtScrOutput.set_text(chooser.get_filename())
+            self.txtVideoInput.set_text(chooser.get_filename())
 	
 	chooser.destroy()
 	
@@ -125,7 +125,7 @@ class GlapseMainGUI:
 	chooser.add_filter(fileFilter)
 	
 	if chooser.run() == gtk.RESPONSE_OK:
-            self.txtScrOutput.set_text(chooser.get_filename())
+            self.txtVideoOutput.set_text(chooser.get_filename())
 	
 	chooser.destroy()
 	
