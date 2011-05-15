@@ -78,8 +78,8 @@ class GlapseMainGUI:
 	self.controller = glapseMain.GlapseMain()
 	
 	# Load logo and icon
-	self.imgLogo.set_from_file(self.configuration.getDataDir() + 'img/glapse-icon-small.png')
-	self.window.set_icon_from_file(self.configuration.getDataDir() + 'img/glapse-icon-small.png')
+	self.imgLogo.set_from_file(os.path.join(self.configuration.getDataDir(), 'img/glapse-icon-small.png'))
+	self.window.set_icon_from_file(os.path.join(self.configuration.getDataDir(), 'img/glapse-icon-small.png'))
 	
 	# Default spin buttons value
 	self.spinScrInterval.set_value(5);
