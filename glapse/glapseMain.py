@@ -1,6 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8  -*-
 
+###############################################################################
+# This file is part of gLapse.                                                #
+#                                                                             #
+# This program is free software: you can redistribute it and/or modify        #
+# it under the terms of the GNU General Public License as published by        #
+# the Free Software Foundation, either version 3 of the License, or           #
+# any later version.                                                          #
+#                                                                             #
+# This program is distributed in the hope that it will be useful,             #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of              #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the               #
+# GNU General Public License for more details.                                #
+#                                                                             #
+# You should have received a copy of the GNU General Public License           #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.       #
+#                                                                             #
+# Copyright (C) 2011, David Saltares Márquez, <david.saltares@gmail.com>      #
+###############################################################################
+
 import threading
 import os
 import time
@@ -51,6 +70,7 @@ class GlapseMain:
         # Create thread to run command
         videoThread = threading.Thread(target = self._makeVideoThread, args = (command, gui))
         videoThread.start()
+        
     
     def getPossibleOverwrite(self, output):
         regex = re.compile('[0-9]{' + str(self.numDigits) + '}.jpg')
