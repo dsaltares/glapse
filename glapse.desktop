@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=0.2
+Type=Application
+Name=gLapse
+Name[es]=gLapse
+GenericName=Screenshots and video
+GenericName[es]=Capturas de pantalla y vídeo
+Comment=Take screenshots and glue them together
+Comment[es]=Toma capturas de pantalla, pégalas en un vídeo
+Icon=/usr/share/pixmaps/glapse.png
+Exec=glapse
+Terminal=false
+Categories=GNOME;Video;
