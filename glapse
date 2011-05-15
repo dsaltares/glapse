@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /usr/share/glapse/
+cd /usr/lib/glapse/
 
 python glapse.py

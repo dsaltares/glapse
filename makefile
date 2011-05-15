@@ -53,13 +53,15 @@ locale:
 	msgfmt -c -v -o lang/en/LC_MESSAGES/glapse.mo po/en.po
 
 install-locale:
-	for f in `find po -name glapse.mo` ; do \
-	  install -d -m 755 \
-	    `echo $$f | sed "s|^po|$(DESTDIR)$(PREFIX)/share/locale|" | \
-	      xargs dirname` && \
-	  install -m 644 $$f \
-	    `echo $$f | sed "s|^po|$(DESTDIR)$(PREFIX)/share/locale|"` ; \
-	  done
+	install -m 755 lang/es/LC_MESSAGES/glapse.mo $(PREFIX)/share/locale/es/LC_MESSAGES
+	install -m 755 lang/en/LC_MESSAGES/glapse.mo $(PREFIX)/share/locale/en/LC_MESSAGES
+	#for f in `find po -name glapse.mo` ; do \
+	#  install -d -m 755 \
+	#    `echo $$f | sed "s|^po|$(DESTDIR)$(PREFIX)/share/locale|" | \
+	#      xargs dirname` && \
+	#  install -m 644 $$f \
+	#    `echo $$f | sed "s|^po|$(DESTDIR)$(PREFIX)/share/locale|"` ; \
+	#  done
 
 clean:
 	-find . -name "*.py[co]" -exec rm -f {} \;
