@@ -24,7 +24,7 @@ import os
 import gtk
 from gettext import gettext as _
 
-from glapse import glapseMain
+from glapseControllers import glapseMain
 
 class GlapseMainGUI:
     
