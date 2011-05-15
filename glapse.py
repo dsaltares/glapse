@@ -25,15 +25,44 @@ import gtk.glade
 import locale
 import gettext
 import os
+import os.path
+import sys
 
 from gettext import gettext as _
 
 from glapseGUI import glapseGUI
+from glapseControllers import configuration
 
+
+# Idea taken from resistencia 2012 project (Pablo Recio Quijano)
+if sys.platform == 'linux2':
+    # Set process name.  Only works on Linux >= 2.1.57.
+    try:
+        import ctypes
+        libc = ctypes.CDLL('libc.so.6')
+        libc.prctl(15, 'glapse', 0, 0, 0)
+    except:
+        try:
+             import dl
+             libc = dl.open('/lib/libc.so.6')
+             libc.call('prctl', 15, 'glapse\0', 0, 0, 0) # 15 is PR_SET_NAME
+        except:
+            pass
+
+# Find out the location of glapse's working directory, and insert it to sys.path
+basedir = os.path.dirname(os.path.realpath(__file__))
+if not os.path.exists(os.path.join(basedir, "glapse.py")):
+    cwd = os.getcwd()
+    if os.path.exists(os.path.join(cwd, "glapse.py")):
+        basedir = cwd
+sys.path.insert(0, basedir)
+
+# General configuration
+configuration = configuration.Configuration()
 
 # App name and i18n dir
 APP = 'glapse'
-LANG = os.path.join(os.path.dirname(__file__), 'lang')
+LANG = configuration.getLangDir()
 
 # Set app translation domain
 #gettext.bind_textdomain_codeset(APP, 'UTF-8')

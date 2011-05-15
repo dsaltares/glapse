@@ -1,6 +1,5 @@
 PREFIX ?= /usr
 LIBINSTALLDIR ?= /lib
-XDGCONFDIR ?= /etc/xdg
 
 GLAPSELIBDIR = $(DESTDIR)$(PREFIX)$(LIBINSTALLDIR)/glapse
 GLAPSESHAREDIR = $(DESTDIR)$(PREFIX)/share/glapse
@@ -30,7 +29,6 @@ uninstall:
 	rm -f  $(DESTDIR)$(PREFIX)/bin/glapse
 	rm -rf $(GLAPSELIBDIR)
 	rm -rf $(GLAPSESHAREDIR)
-	rm -rf $(DESTDIR)$(XDGCONFDIR)/glapse
 	rm -f $(DESTDIR)$(PREFIX)/share/applications/glapse.desktop
 	rm -f $(DESTDIR)$(PREFIX)/share/pixmaps/glapse-icon.png
 

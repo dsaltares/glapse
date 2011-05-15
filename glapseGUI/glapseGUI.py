@@ -25,13 +25,13 @@ import gtk
 from gettext import gettext as _
 
 from glapseControllers import glapseMain
+from glapseControllers import configuration
 
 class GlapseMainGUI:
     
     def __init__(self):
 	
-	# Version
-	self.version = 0.1
+	self.configuration = configuration.Configuration()
 	
 	print ''
 	print 'gLapse v0.1 - Take screenshots, glue them together'
@@ -44,7 +44,7 @@ class GlapseMainGUI:
         builder = gtk.Builder()
         
         # Set path to find Glade file
-        path = os.path.dirname(__file__) + '/../data/glade/glapseGUI.glade'
+	path = self.configuration.getDataDir() + '/glade/glapseGUI.glade'
 		
         # Build file from Glade file
         builder.add_from_file(path)
@@ -78,9 +78,8 @@ class GlapseMainGUI:
 	self.controller = glapseMain.GlapseMain()
 	
 	# Load logo and icon
-	self.imgLogo.set_from_file(os.path.dirname(__file__) + '/../data/img/glapse-icon-small.png')
-	self.window.set_icon_from_file(os.path.dirname(__file__) + '/../data/img/glapse-icon-small.png')
-	#self.aboutDlg.set_logo_icon_name(os.path.dirname(__file__) + '/../data/img/glapse-icon-small.png')
+	self.imgLogo.set_from_file(self.configuration.getDataDir() + 'img/glapse-icon-small.png')
+	self.window.set_icon_from_file(self.configuration.getDataDir() + 'img/glapse-icon-small.png')
 	
 	# Default spin buttons value
 	self.spinScrInterval.set_value(5);
