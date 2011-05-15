@@ -1,10 +1,12 @@
 #!/usr/bin/env python
-# -*- coding: utf8  -*-
+# -*- coding: utf-8  -*-
 
 import threading
 import os
 import time
 import re
+
+from gettext import gettext as _
 
 class GlapseMain:
     

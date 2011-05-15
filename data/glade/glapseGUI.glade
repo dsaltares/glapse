@@ -453,7 +453,7 @@
     <property name="copyright" translatable="yes">(©) David Saltares Márquez 2011</property>
     <property name="comments" translatable="yes">Take screensots, glue them together</property>
     <property name="website">http://code.google.com/p/glapse</property>
-    <property name="license" translatable="yes">                    GNU GENERAL PUBLIC LICENSE
+    <property name="license">                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
-# -*- coding: utf8  -*-
+# -*- coding: utf-8  -*-
 
 
 import gtk
+import gtk.glade
 import locale
 import gettext
 import os
 
-# Translate strings like _('string')
 from gettext import gettext as _
 
 from glapseGUI import glapseGUI
@@ -17,15 +17,16 @@ from glapseGUI import glapseGUI
 APP = 'glapse'
 LANG = os.path.join(os.path.dirname(__file__), 'lang')
 
-# Get translation domain
+# Set app translation domain
+#gettext.bind_textdomain_codeset(APP, 'UTF-8')
+locale.setlocale(locale.LC_ALL, '')
 gettext.textdomain(APP)
 gettext.bindtextdomain(APP, LANG)
-#gtk.glade.textdomain(APP)
-#gtk.glade.bindtextdomain(APP, LANG)
 
+# Set Glade translation domain
+gtk.glade.textdomain(APP)
+gtk.glade.bindtextdomain(APP, LANG)
 
-# Set the locale to LANG, or the user's default
-locale.setlocale(locale.LC_ALL, '')
 
 def main():
     # Create main window and start application

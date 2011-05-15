@@ -1,8 +1,9 @@
 #!/usr/bin/env python
-# -*- coding: utf8  -*-
+# -*- coding: utf-8  -*-
 
 import os
 import gtk
+from gettext import gettext as _
 
 from glapse import glapseMain
 
@@ -143,13 +144,13 @@ class GlapseMainGUI:
 	    checkList = False
 	    self.dlgError.set_title(_('Folder not found'))
 	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
-	    self.dlgError.format_secondary_text(_('Pleasy, select a valid output folder'))
+	    self.dlgError.format_secondary_text(_('Please, select a valid output folder'))
 	    self.dlgError.run()
 	    self.dlgError.hide()
 	    
 	
 	# Search folder for possible file overwrite
-	if self.controller.getPossibleOverwrite(output):
+	if checkList and self.controller.getPossibleOverwrite(output):
 	    if self.msgOverwrite.run() == gtk.RESPONSE_NO:
 		checkList = False
 	    
