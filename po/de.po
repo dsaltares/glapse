@@ -1,0 +1,163 @@
+# German translations for glapse package.
+# Copyright (C) 2011 David Saltares Márquez
+# This file is distributed under the same license as the glapse package.
+# chris <superyoshi1@gmx.de>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: glapse 0.1\n"
+"Report-Msgid-Bugs-To: david.saltares@gmail.com\n"
+"POT-Creation-Date: 2011-05-15 12:42+0200\n"
+"PO-Revision-Date: 2011-05-19 14:35+0200\n"
+"Last-Translator: Chris Sp <superyoshi1@gmx.de>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/glade/glapseGUI.glade.h:1
+msgid "(©) David Saltares Márquez 2011"
+msgstr "(©) David Saltares Márquez 2011"
+
+#: glapseGUI/glapseGUI.py:146 glapseGUI/glapseGUI.py:200
+#: glapseGUI/glapseGUI.py:210
+#, python-format
+msgid "<b>%s does not exist</b>"
+msgstr "<b>%s existiert nicht</b>"
+
+#: glapseGUI/glapseGUI.py:251
+#, python-format
+msgid "<b>%s was not found</b>"
+msgstr "<b>%s wurde nicht gefunden</b>"
+
+#: data/glade/glapseGUI.glade.h:2
+msgid "<b>Screenshots</b>"
+msgstr "<b>Screenshots</b>"
+
+#: data/glade/glapseGUI.glade.h:3
+msgid "<b>Video</b>"
+msgstr "<b>Video</b>"
+
+#: data/glade/glapseGUI.glade.h:4
+msgid "About"
+msgstr "Über"
+
+#: data/glade/glapseGUI.glade.h:5
+msgid "Choose..."
+msgstr "Wählen..."
+
+#: glapseGUI/glapseGUI.py:220
+msgid "Creating video..."
+msgstr "Erstelle Video..."
+
+#: glapseGUI/glapseGUI.py:250
+msgid "Dependencies error"
+msgstr "Abhängigkeits-Fehler"
+
+#: data/glade/glapseGUI.glade.h:6
+msgid "Error"
+msgstr "Fehler"
+
+#: data/glade/glapseGUI.glade.h:7
+msgid "FPS"
+msgstr "FPS"
+
+#: glapseGUI/glapseGUI.py:145 glapseGUI/glapseGUI.py:199
+#: glapseGUI/glapseGUI.py:209
+msgid "Folder not found"
+msgstr "Ordner nicht gefunden"
+
+#: glapseGUI/glapseGUI.py:178 glapseGUI/glapseGUI.py:226
+#: data/glade/glapseGUI.glade.h:8
+msgid "Idle"
+msgstr "Bereit"
+
+#: data/glade/glapseGUI.glade.h:9
+msgid "Input folder"
+msgstr "Video-Quellordner"
+
+#: data/glade/glapseGUI.glade.h:10
+msgid "Interval (s)"
+msgstr "Intervall (s)"
+
+#: glapseGUI/glapseGUI.py:125
+msgid "MP4 files"
+msgstr "MP4-Dateien"
+
+#: data/glade/glapseGUI.glade.h:11
+msgid "Make video"
+msgstr "Video erstellen"
+
+#: data/glade/glapseGUI.glade.h:12
+msgid "Output file"
+msgstr "Video-Datei"
+
+#: data/glade/glapseGUI.glade.h:13
+msgid "Output folder"
+msgstr "Video-Zielordner"
+
+#: glapseGUI/glapseGUI.py:252
+msgid "Please, install the package and launch gLapse again"
+msgstr "Bitte Paket installieren und gLapse neu starten."
+
+#: glapseGUI/glapseGUI.py:201 glapseGUI/glapseGUI.py:211
+msgid "Please, select a valid input folder"
+msgstr "Bitte einen gültigen Video-Quellordner angeben."
+
+#: glapseGUI/glapseGUI.py:147
+msgid "Please, select a valid output folder"
+msgstr "Bitte einen gültigen Video-Zielordner angeben."
+
+#: data/glade/glapseGUI.glade.h:14
+msgid "Quality"
+msgstr "Qualität"
+
+#: data/glade/glapseGUI.glade.h:15
+msgid "Screenshots folder is not empty"
+msgstr "Screenshot-Ordner ist nicht leer"
+
+#: glapseGUI/glapseGUI.py:91
+msgid "Screenshots output folder"
+msgstr "Screenshot-Ordner"
+
+#: data/glade/glapseGUI.glade.h:16
+msgid "Stop"
+msgstr "Stopp"
+
+#: data/glade/glapseGUI.glade.h:17
+msgid "Take screensots, glue them together"
+msgstr "Mach Screenshots, kleb sie zusammen"
+
+#: data/glade/glapseGUI.glade.h:18
+msgid "Take several screenshots and glue them together"
+msgstr "Mach Screenshots und kleb sie zusammen"
+
+#: data/glade/glapseGUI.glade.h:19
+msgid "Take shots"
+msgstr "Screenshots nehmen"
+
+#: glapseGUI/glapseGUI.py:167
+msgid "Taking screenshots..."
+msgstr "Erstelle Screenshots..."
+
+#: data/glade/glapseGUI.glade.h:20
+msgid ""
+"The folder already has files following the naming pattern , taking "
+"screenshots may overwrite them. Do you want to continue?"
+msgstr ""
+"Der Order beinhaltet Dateien, die den Screenshot-Namen ähneln. Neue"
+"Screenshots könnten diese überschireben. Trotzdem weitermachen?"
+
+#: glapseGUI/glapseGUI.py:104
+msgid "Video input folder"
+msgstr "Video-Quellordner"
+
+#: glapseGUI/glapseGUI.py:117
+msgid "Video output file"
+msgstr "Video-Datei"
+
+#: data/glade/glapseGUI.glade.h:21
+msgid "gLapse v0.1"
+msgstr "gLapse v0.1"
