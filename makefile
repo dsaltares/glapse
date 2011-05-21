@@ -51,10 +51,12 @@ install-target: make-install-dirs
 locale:
 	msgfmt -c -v -o lang/es/LC_MESSAGES/glapse.mo po/es.po
 	msgfmt -c -v -o lang/en/LC_MESSAGES/glapse.mo po/en.po
+	msgfmt -c -v -o lang/de/LC_MESSAGES/glapse.mo po/de.po
 
 install-locale:
 	install -m 755 lang/es/LC_MESSAGES/glapse.mo $(DESTDIR)$(PREFIX)/share/locale/es/LC_MESSAGES
 	install -m 755 lang/en/LC_MESSAGES/glapse.mo $(DESTDIR)$(PREFIX)/share/locale/en/LC_MESSAGES
+	install -m 755 lang/de/LC_MESSAGES/glapse.mo $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES
 
 
 clean:
