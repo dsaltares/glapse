@@ -112,7 +112,9 @@ class GlapseMainGUI:
         chooser.set_current_folder(os.getenv('HOME'))
 	
 	if chooser.run() == gtk.RESPONSE_OK:
+	    # Update video input and screen output to keep them synced
             self.txtScrOutput.set_text(chooser.get_filename())
+	    self.txtVideoInput.set_text(chooser.get_filename())
 	
 	chooser.destroy()
 	
@@ -125,7 +127,9 @@ class GlapseMainGUI:
 	chooser.set_current_folder(os.getenv('HOME'))
         
 	if chooser.run() == gtk.RESPONSE_OK:
+	    # Update video input and screen output to keep them synced
             self.txtVideoInput.set_text(chooser.get_filename())
+	    self.txtScrOutput.set_text(chooser.get_filename())
 	
 	chooser.destroy()
 	
