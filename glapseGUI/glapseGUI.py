@@ -109,7 +109,7 @@ class GlapseMainGUI:
 	title = _('Screenshots output folder')
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
-        chooser.set_current_folder(os.getenv('HOME'))
+        chooser.set_current_folder(self.txtScrOutput.get_text())
 	
 	if chooser.run() == gtk.RESPONSE_OK:
 	    # Update video input and screen output to keep them synced
@@ -124,7 +124,7 @@ class GlapseMainGUI:
 	title = _('Video input folder')
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
-	chooser.set_current_folder(os.getenv('HOME'))
+	chooser.set_current_folder(self.txtVideoInput.get_text())
         
 	if chooser.run() == gtk.RESPONSE_OK:
 	    # Update video input and screen output to keep them synced
