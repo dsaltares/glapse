@@ -39,7 +39,7 @@ class GlapseMain:
     
     def startScreenshots(self, output, quality, interval):
         print 'Starting taking screenshots...'
-        print 'Output folder: ' + str(output)
+        print 'Output folder: ' + output
         print 'Quality: ' + str(quality)
         print 'Interval: ' + str(interval)
         

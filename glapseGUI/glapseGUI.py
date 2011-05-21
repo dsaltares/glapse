@@ -68,7 +68,7 @@ class GlapseMainGUI:
 	
 	
 	self.dlgError = builder.get_object('dlgError')
-	self.msgOverwrite = builder.get_object('msgOverwrite')
+	self.msgQuestion = builder.get_object('msgQuestion')
 	self.aboutDlg = builder.get_object('aboutDlg')
 		
         # Connect signals
@@ -87,9 +87,9 @@ class GlapseMainGUI:
 	self.spinVideoFPS.set_value(10);
 	
 	# Default path
-	self.txtScrOutput.set_text(os.getenv('HOME'))
-	self.txtVideoInput.set_text(os.getenv('HOME'))
-	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'timelapse.mp4')
+	self.txtScrOutput.set_text(os.getenv('HOME') + os.sep + 'glapse')
+	self.txtVideoInput.set_text(os.getenv('HOME') + os.sep + 'glapse')
+	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'glapse' + os.sep + 'timelapse.mp4')
 	
 	# Disable stop screenshots
 	self.btnScrStop.set_sensitive(False)
@@ -163,20 +163,30 @@ class GlapseMainGUI:
 	
 	# Check folder existence
 	if not os.path.exists(output):
-	    checkList = False
-	    self.dlgError.set_title(_('Folder not found'))
-	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
-	    self.dlgError.format_secondary_text(_('Please, select a valid output folder'))
-	    self.dlgError.run()
-	    self.dlgError.hide()
+	    #checkList = False
+	    #self.dlgError.set_title(_('Folder not found'))
+	    #self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
+	    #self.dlgError.format_secondary_text(_('Please, select a valid output folder'))
+	    #self.dlgError.run()
+	    #self.dlgError.hide()
+	    
+	    # Shows question dialog to create folder
+	    self.msgQuestion.set_markup(_('<b>%s</b> does not exists, do you want to create it?') % output) 
+	    if self.msgQuestion.run() == gtk.RESPONSE_NO:
+		checkList = False;
+	    else:
+		os.system('mkdir -p ' + output)
+		
+	    self.msgQuestion.hide()
 	    
 	
 	# Search folder for possible file overwrite
 	if checkList and self.controller.getPossibleOverwrite(output):
-	    if self.msgOverwrite.run() == gtk.RESPONSE_NO:
+	    self.msgQuestion.set_markup(_('The folder already has files following the naming pattern, taking screenshots may overwrite them. Do you want to continue?'))
+	    if self.msgQuestion.run() == gtk.RESPONSE_NO:
 		checkList = False
 	    
-	    self.msgOverwrite.hide()
+	    self.msgQuestion.hide()
 	    
 	
 	# If everything is correct
@@ -229,7 +239,7 @@ class GlapseMainGUI:
 	if not os.path.exists(outputPath):
 	    checkList = False
 	    self.dlgError.set_title(_('Folder not found'))
-	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (output))
+	    self.dlgError.set_markup(_('<b>%s does not exist</b>') % (outputPath))
 	    self.dlgError.format_secondary_text(_('Please, select a valid input folder'))
 	    self.dlgError.run()
 	    self.dlgError.hide()

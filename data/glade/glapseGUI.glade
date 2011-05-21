@@ -1149,7 +1149,7 @@ Public License instead of this License.  But first, please read
       </object>
     </child>
   </object>
-  <object class="GtkMessageDialog" id="msgOverwrite">
+  <object class="GtkMessageDialog" id="msgQuestion">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Screenshots folder is not empty</property>
     <property name="modal">True</property>
@@ -1158,7 +1158,6 @@ Public License instead of this License.  But first, please read
     <property name="skip_taskbar_hint">True</property>
     <property name="message_type">question</property>
     <property name="buttons">yes-no</property>
-    <property name="text" translatable="yes">The folder already has files following the naming pattern , taking screenshots may overwrite them. Do you want to continue?</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox4">
         <property name="visible">True</property>
