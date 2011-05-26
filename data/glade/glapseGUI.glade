@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
@@ -98,7 +98,7 @@
                           <object class="GtkEntry" id="txtScrOutput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
+                            <property name="invisible_char">&#x2022;</property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -110,22 +110,6 @@
                             <property name="visible">True</property>
                             <property name="label" translatable="yes">Output folder</property>
                           </object>
-                        </child>
-                        <child>
-                          <object class="GtkSpinButton" id="spinScrQuality">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
-                            <property name="adjustment">adjScrQuality</property>
-                            <property name="wrap">True</property>
-                            <property name="update_policy">if-valid</property>
-                          </object>
-                          <packing>
-                            <property name="left_attach">1</property>
-                            <property name="right_attach">2</property>
-                            <property name="top_attach">1</property>
-                            <property name="bottom_attach">2</property>
-                          </packing>
                         </child>
                         <child>
                           <object class="GtkLabel" id="lblScrQuality">
@@ -143,22 +127,6 @@
                             <property name="label" translatable="yes">Interval (s)</property>
                           </object>
                           <packing>
-                            <property name="top_attach">2</property>
-                            <property name="bottom_attach">3</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkSpinButton" id="spinScrInterval">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
-                            <property name="adjustment">adjScrInterval</property>
-                            <property name="wrap">True</property>
-                            <property name="update_policy">if-valid</property>
-                          </object>
-                          <packing>
-                            <property name="left_attach">1</property>
-                            <property name="right_attach">2</property>
                             <property name="top_attach">2</property>
                             <property name="bottom_attach">3</property>
                           </packing>
@@ -217,6 +185,34 @@
                         <child>
                           <placeholder/>
                         </child>
+                        <child>
+                          <object class="GtkHScale" id="scaleScrQuality">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="adjustment">adjScrQuality</property>
+                            <property name="digits">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkHScale" id="scaleScrInterval">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="adjustment">adjScrInterval</property>
+                            <property name="digits">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                          </packing>
+                        </child>
                       </object>
                     </child>
                   </object>
@@ -246,13 +242,13 @@
                     <child>
                       <object class="GtkTable" id="table2">
                         <property name="visible">True</property>
-                        <property name="n_rows">4</property>
+                        <property name="n_rows">5</property>
                         <property name="n_columns">3</property>
                         <child>
                           <object class="GtkEntry" id="txtVideoInput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
+                            <property name="invisible_char">&#x2022;</property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -294,7 +290,7 @@
                           <object class="GtkEntry" id="txtVideoOutput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
+                            <property name="invisible_char">&#x2022;</property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -331,22 +327,6 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkSpinButton" id="spinVideoFPS">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
-                            <property name="adjustment">adjFPS</property>
-                            <property name="wrap">True</property>
-                            <property name="update_policy">if-valid</property>
-                          </object>
-                          <packing>
-                            <property name="left_attach">1</property>
-                            <property name="right_attach">2</property>
-                            <property name="top_attach">2</property>
-                            <property name="bottom_attach">3</property>
-                          </packing>
-                        </child>
-                        <child>
                           <object class="GtkButton" id="btnMakeVideo">
                             <property name="label" translatable="yes">Make video</property>
                             <property name="visible">True</property>
@@ -357,10 +337,34 @@
                           <packing>
                             <property name="left_attach">1</property>
                             <property name="right_attach">2</property>
-                            <property name="top_attach">3</property>
-                            <property name="bottom_attach">4</property>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
                             <property name="x_options"></property>
                             <property name="y_options"></property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkHScale" id="scaleVideoQuality">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="adjustment">adjVideoQuality</property>
+                            <property name="digits">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="lblVideoQuality">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Quality (bps)</property>
+                          </object>
+                          <packing>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
                           </packing>
                         </child>
                         <child>
@@ -371,6 +375,23 @@
                         </child>
                         <child>
                           <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <object class="GtkHScale" id="scaleVideoFPS">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="adjustment">adjFPS</property>
+                            <property name="digits">0</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                          </packing>
                         </child>
                       </object>
                     </child>
@@ -426,19 +447,19 @@
     </child>
   </object>
   <object class="GtkAdjustment" id="adjScrQuality">
-    <property name="value">100</property>
-    <property name="lower">1</property>
+    <property name="value">50</property>
+    <property name="lower">10</property>
     <property name="upper">100</property>
     <property name="step_increment">1</property>
   </object>
   <object class="GtkAdjustment" id="adjScrInterval">
-    <property name="value">10</property>
+    <property name="value">20</property>
     <property name="lower">1</property>
     <property name="upper">100</property>
     <property name="step_increment">1</property>
   </object>
   <object class="GtkAdjustment" id="adjFPS">
-    <property name="value">25</property>
+    <property name="value">10</property>
     <property name="lower">1</property>
     <property name="upper">60</property>
     <property name="step_increment">1</property>
@@ -450,7 +471,7 @@
     <property name="skip_taskbar_hint">True</property>
     <property name="program_name">gLapse </property>
     <property name="version">v0.1</property>
-    <property name="copyright" translatable="yes">(©) David Saltares Márquez 2011</property>
+    <property name="copyright" translatable="yes">(&#xA9;) David Saltares M&#xE1;rquez 2011</property>
     <property name="comments" translatable="yes">Take screensots, glue them together</property>
     <property name="website">http://code.google.com/p/glapse</property>
     <property name="license">                    GNU GENERAL PUBLIC LICENSE
@@ -1216,5 +1237,13 @@ Public License instead of this License.  But first, please read
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkAdjustment" id="adjVideoQuality">
+    <property name="value">1000</property>
+    <property name="lower">700</property>
+    <property name="upper">2500</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+    <property name="page_size">10</property>
   </object>
 </interface>

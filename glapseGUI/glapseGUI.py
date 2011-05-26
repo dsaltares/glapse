@@ -55,16 +55,17 @@ class GlapseMainGUI:
 	self.lblStatus = builder.get_object('lblStatus')
         self.btnScrOutput = builder.get_object('btnScrOutput')
 	self.txtScrOutput = builder.get_object('txtScrOutput')
-        self.spinScrQuality = builder.get_object('spinScrQuality')
-        self.spinScrInterval = builder.get_object('spinScrInterval')
+        self.scaleScrQuality = builder.get_object('scaleScrQuality')
+        self.scaleScrInterval = builder.get_object('scaleScrInterval')
         self.btnScrStart = builder.get_object('btnScrStart')
         self.btnScrStop = builder.get_object('btnScrStop')
         self.btnVideoInput = builder.get_object('btnVideoInput')
 	self.txtVideoInput = builder.get_object('txtVideoInput')
         self.btnVideoOutput = builder.get_object('btnVideoOutput')
 	self.txtVideoOutput = builder.get_object('txtVideoOutput')
-        self.spinVideoFPS = builder.get_object('spinVideoFPS')
+        self.scaleVideoFPS = builder.get_object('scaleVideoFPS')
         self.btnMakeVideo = builder.get_object('btnMakeVideo')
+        self.scaleVideoQuality = builder.get_object('scaleVideoQuality')
 	
 	
 	self.dlgError = builder.get_object('dlgError')
@@ -81,16 +82,18 @@ class GlapseMainGUI:
 	self.imgLogo.set_from_file(os.path.join(self.configuration.getDataDir(), 'img/glapse-icon-small.png'))
 	self.window.set_icon_from_file(os.path.join(self.configuration.getDataDir(), 'img/glapse-icon-small.png'))
 	
-	# Default spin buttons value
-	self.spinScrInterval.set_value(5);
-	self.spinScrQuality.set_value(80);
-	self.spinVideoFPS.set_value(10);
-	
 	# Default path
 	self.txtScrOutput.set_text(os.getenv('HOME') + os.sep + 'glapse')
 	self.txtVideoInput.set_text(os.getenv('HOME') + os.sep + 'glapse')
 	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'glapse' + os.sep + 'timelapse.mp4')
-	
+
+        
+        # Set default scale values
+        self.scaleScrQuality.set_value(50)
+        self.scaleScrInterval.set_value(10)
+        self.scaleVideoFPS.set_value(5)
+        self.scaleVideoQuality.set_value(1000)
+
 	# Disable stop screenshots
 	self.btnScrStop.set_sensitive(False)
 	
@@ -156,8 +159,8 @@ class GlapseMainGUI:
     def onBtnScrStartClicked(self, widget):
 	# Get options
 	output = self.txtScrOutput.get_text()
-	quality = self.spinScrQuality.get_value()
-	interval = self.spinScrInterval.get_value()
+	quality = self.scaleScrQuality.get_value()
+	interval = self.scaleScrInterval.get_value()
 	
 	checkList = True
 	
@@ -221,7 +224,7 @@ class GlapseMainGUI:
 	# Get options
 	videoInput = self.txtVideoInput.get_text()
 	videoOutput = self.txtVideoOutput.get_text()
-	videoFPS = self.spinVideoFPS.get_value()
+	videoFPS = self.scaleVideoFPS.get_value()
 	
 	checkList = True
 	
