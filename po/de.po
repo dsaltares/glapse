@@ -34,7 +34,7 @@ msgstr "<b>%s wurde nicht gefunden</b>"
 #: glapseGUI/glapseGUI.py:178
 #, python-format
 msgid "<b>%s</b> does not exists, do you want to create it?"
-msgstr ""
+msgstr "<b>%s</b> nicht vorhanden ist, wollen sie es schaffen?"
 
 #: data/glade/glapseGUI.glade.h:2
 msgid "<b>Screenshots</b>"
@@ -50,7 +50,7 @@ msgstr "Über"
 
 #: glapseGUI/glapseGUI.py:272
 msgid "Best"
-msgstr ""
+msgstr "Die besten"
 
 #: data/glade/glapseGUI.glade.h:5
 msgid "Choose..."
@@ -78,7 +78,7 @@ msgstr "Ordner nicht gefunden"
 
 #: glapseGUI/glapseGUI.py:270
 msgid "Good"
-msgstr ""
+msgstr "Gute"
 
 #: data/glade/glapseGUI.glade.h:8 glapseGUI/glapseGUI.py:214
 #: glapseGUI/glapseGUI.py:277
@@ -103,7 +103,7 @@ msgstr "Video erstellen"
 
 #: data/glade/glapseGUI.glade.h:12 glapseGUI/glapseGUI.py:268
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: data/glade/glapseGUI.glade.h:13
 msgid "Output file"
@@ -123,16 +123,15 @@ msgstr "Bitte einen gültigen Video-Quellordner angeben."
 
 #: glapseGUI/glapseGUI.py:266
 msgid "Poor"
-msgstr ""
+msgstr "Schlechte"
 
 #: data/glade/glapseGUI.glade.h:15
 msgid "Quality"
 msgstr "Qualität"
 
 #: data/glade/glapseGUI.glade.h:16
-#, fuzzy
 msgid "Quality (bps)"
-msgstr "Qualität"
+msgstr "Qualität (bps)"
 
 #: data/glade/glapseGUI.glade.h:17
 msgid "Screenshots folder is not empty"
@@ -163,7 +162,6 @@ msgid "Taking screenshots..."
 msgstr "Erstelle Screenshots..."
 
 #: glapseGUI/glapseGUI.py:189
-#, fuzzy
 msgid ""
 "The folder already has files following the naming pattern, taking "
 "screenshots may overwrite them. Do you want to continue?"
@@ -173,7 +171,7 @@ msgstr ""
 
 #: glapseGUI/glapseGUI.py:264
 msgid "Very bad"
-msgstr ""
+msgstr "Sehr schlechte"
 
 #: glapseGUI/glapseGUI.py:128
 msgid "Video input folder"
@@ -184,9 +182,8 @@ msgid "Video output file"
 msgstr "Video-Datei"
 
 #: data/glade/glapseGUI.glade.h:22
-#, fuzzy
 msgid "gLapse v0.2"
-msgstr "gLapse v0.1"
+msgstr "gLapse v0.2"
 
 #~ msgid "Please, select a valid output folder"
 #~ msgstr "Bitte einen gültigen Video-Zielordner angeben."
