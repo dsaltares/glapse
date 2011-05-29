@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
@@ -98,7 +98,7 @@
                           <object class="GtkEntry" id="txtScrOutput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">&#x2022;</property>
+                            <property name="invisible_char">•</property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -174,18 +174,6 @@
                           </packing>
                         </child>
                         <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
                           <object class="GtkHScale" id="scaleScrQuality">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -212,6 +200,18 @@
                             <property name="top_attach">2</property>
                             <property name="bottom_attach">3</property>
                           </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
                         </child>
                       </object>
                     </child>
@@ -248,7 +248,7 @@
                           <object class="GtkEntry" id="txtVideoInput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">&#x2022;</property>
+                            <property name="invisible_char">•</property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -290,7 +290,7 @@
                           <object class="GtkEntry" id="txtVideoOutput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">&#x2022;</property>
+                            <property name="invisible_char">•</property>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -349,6 +349,7 @@
                             <property name="can_focus">True</property>
                             <property name="adjustment">adjVideoQuality</property>
                             <property name="digits">0</property>
+                            <signal name="value_changed" handler="onScaleVideoQualityChange"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -368,18 +369,6 @@
                           </packing>
                         </child>
                         <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
                           <object class="GtkHScale" id="scaleVideoFPS">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -391,6 +380,27 @@
                             <property name="right_attach">2</property>
                             <property name="top_attach">2</property>
                             <property name="bottom_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="lblQualityName">
+                            <property name="visible">True</property>
+                            <property name="label" translatable="yes">Normal</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="right_attach">3</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
                           </packing>
                         </child>
                       </object>
@@ -471,7 +481,7 @@
     <property name="skip_taskbar_hint">True</property>
     <property name="program_name">gLapse </property>
     <property name="version">v0.1</property>
-    <property name="copyright" translatable="yes">(&#xA9;) David Saltares M&#xE1;rquez 2011</property>
+    <property name="copyright" translatable="yes">(©) David Saltares Márquez 2011</property>
     <property name="comments" translatable="yes">Take screensots, glue them together</property>
     <property name="website">http://code.google.com/p/glapse</property>
     <property name="license">                    GNU GENERAL PUBLIC LICENSE
@@ -1239,10 +1249,10 @@ Public License instead of this License.  But first, please read
     </child>
   </object>
   <object class="GtkAdjustment" id="adjVideoQuality">
-    <property name="value">1000</property>
-    <property name="lower">700</property>
-    <property name="upper">2500</property>
-    <property name="step_increment">1</property>
+    <property name="value">10000</property>
+    <property name="lower">200</property>
+    <property name="upper">23010</property>
+    <property name="step_increment">10</property>
     <property name="page_increment">10</property>
     <property name="page_size">10</property>
   </object>

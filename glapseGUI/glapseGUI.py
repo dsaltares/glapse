@@ -66,6 +66,7 @@ class GlapseMainGUI:
         self.scaleVideoFPS = builder.get_object('scaleVideoFPS')
         self.btnMakeVideo = builder.get_object('btnMakeVideo')
         self.scaleVideoQuality = builder.get_object('scaleVideoQuality')
+	self.lblQualityName = builder.get_object('lblQualityName')
 	
 	
 	self.dlgError = builder.get_object('dlgError')
@@ -92,7 +93,7 @@ class GlapseMainGUI:
         self.scaleScrQuality.set_value(50)
         self.scaleScrInterval.set_value(10)
         self.scaleVideoFPS.set_value(5)
-        self.scaleVideoQuality.set_value(1000)
+        self.scaleVideoQuality.set_value(10000)
 
 	# Disable stop screenshots
 	self.btnScrStop.set_sensitive(False)
@@ -255,6 +256,20 @@ class GlapseMainGUI:
 	    self.lblStatus.set_text(_('Creating video...'))
 	    # Call controller
 	    self.controller.makeVideo(self, videoInput,videoOutput, videoFPS)
+	    
+    def onScaleVideoQualityChange(self, widget):
+	# Adjust label quality name
+	if self.scaleVideoQuality.get_value() < 4560:
+	    self.lblQualityName.set_text(_('Very bad'))
+	elif self.scaleVideoQuality.get_value() < 9120:
+	    self.lblQualityName.set_text(_('Poor'))
+	elif self.scaleVideoQuality.get_value() < 13680:
+	    self.lblQualityName.set_text(_('Normal'))
+	elif self.scaleVideoQuality.get_value() < 18240:
+	    self.lblQualityName.set_text(_('Good'))
+	else:
+	    self.lblQualityName.set_text(_('Best'))
+	
 	
     def onMakeVideoFinished(self):
 	# Chanche status bar

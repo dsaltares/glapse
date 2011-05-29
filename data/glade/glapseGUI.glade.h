@@ -17,5 +17,4 @@ char *s = N_("Stop");
 char *s = N_("Take screensots, glue them together");
 char *s = N_("Take several screenshots and glue them together");
 char *s = N_("Take shots");
-char *s = N_("The folder already has files following the naming pattern , taking screenshots may overwrite them. Do you want to continue?");
 char *s = N_("gLapse v0.1");
