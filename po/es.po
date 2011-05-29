@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: glapse 0.1\n"
 "Report-Msgid-Bugs-To: david.saltares@gmail.com\n"
-"POT-Creation-Date: 2011-05-15 12:42+0200\n"
+"POT-Creation-Date: 2011-05-29 16:06+0200\n"
 "PO-Revision-Date: 2011-05-15 11:51+0200\n"
 "Last-Translator: David Saltares Márquez <david.saltares@gmail.com>\n"
 "Language-Team: Spanish\n"
@@ -21,16 +21,20 @@ msgstr ""
 msgid "(©) David Saltares Márquez 2011"
 msgstr "(©) David Saltares Márquez 2011"
 
-#: glapseGUI/glapseGUI.py:146 glapseGUI/glapseGUI.py:200
-#: glapseGUI/glapseGUI.py:210
+#: glapseGUI/glapseGUI.py:237 glapseGUI/glapseGUI.py:247
 #, python-format
 msgid "<b>%s does not exist</b>"
 msgstr "<b>%s no existe</b>"
 
-#: glapseGUI/glapseGUI.py:251
+#: glapseGUI/glapseGUI.py:302
 #, python-format
 msgid "<b>%s was not found</b>"
 msgstr "<b>no se encontró %s</b>"
+
+#: glapseGUI/glapseGUI.py:178
+#, python-format
+msgid "<b>%s</b> does not exists, do you want to create it?"
+msgstr "<b>%s</b> no existe, ¿quiere crearlo?"
 
 #: data/glade/glapseGUI.glade.h:2
 msgid "<b>Screenshots</b>"
@@ -44,15 +48,19 @@ msgstr "<b>Vídeo</b>"
 msgid "About"
 msgstr "Acerca de"
 
+#: glapseGUI/glapseGUI.py:272
+msgid "Best"
+msgstr "Muy buena"
+
 #: data/glade/glapseGUI.glade.h:5
 msgid "Choose..."
 msgstr "Elegir..."
 
-#: glapseGUI/glapseGUI.py:220
+#: glapseGUI/glapseGUI.py:257
 msgid "Creating video..."
 msgstr "Creando vídeo..."
 
-#: glapseGUI/glapseGUI.py:250
+#: glapseGUI/glapseGUI.py:301
 msgid "Dependencies error"
 msgstr "Error de dependencias"
 
@@ -64,13 +72,16 @@ msgstr "Error"
 msgid "FPS"
 msgstr "FPS"
 
-#: glapseGUI/glapseGUI.py:145 glapseGUI/glapseGUI.py:199
-#: glapseGUI/glapseGUI.py:209
+#: glapseGUI/glapseGUI.py:236 glapseGUI/glapseGUI.py:246
 msgid "Folder not found"
 msgstr "Directorio no encontrado"
 
-#: glapseGUI/glapseGUI.py:178 glapseGUI/glapseGUI.py:226
-#: data/glade/glapseGUI.glade.h:8
+#: glapseGUI/glapseGUI.py:270
+msgid "Good"
+msgstr "Buena"
+
+#: data/glade/glapseGUI.glade.h:8 glapseGUI/glapseGUI.py:214
+#: glapseGUI/glapseGUI.py:277
 msgid "Idle"
 msgstr "Inactivo"
 
@@ -82,7 +93,7 @@ msgstr "Directorio de capturas"
 msgid "Interval (s)"
 msgstr "Intervalo (s)"
 
-#: glapseGUI/glapseGUI.py:125
+#: glapseGUI/glapseGUI.py:151
 msgid "MP4 files"
 msgstr "ficheros MP4"
 
@@ -90,74 +101,89 @@ msgstr "ficheros MP4"
 msgid "Make video"
 msgstr "Crear vídeo"
 
-#: data/glade/glapseGUI.glade.h:12
+#: data/glade/glapseGUI.glade.h:12 glapseGUI/glapseGUI.py:268
+msgid "Normal"
+msgstr "Normal"
+
+#: data/glade/glapseGUI.glade.h:13
 msgid "Output file"
 msgstr "Fichero de vídeo"
 
-#: data/glade/glapseGUI.glade.h:13
+#: data/glade/glapseGUI.glade.h:14
 msgid "Output folder"
 msgstr "Directorio de capturas"
 
-#: glapseGUI/glapseGUI.py:252
+#: glapseGUI/glapseGUI.py:303
 msgid "Please, install the package and launch gLapse again"
 msgstr "Por favor, instale el paquete e inicie gLapse de nuevo"
 
-#: glapseGUI/glapseGUI.py:201 glapseGUI/glapseGUI.py:211
+#: glapseGUI/glapseGUI.py:238 glapseGUI/glapseGUI.py:248
 msgid "Please, select a valid input folder"
 msgstr "Por favor, elija un directorio de entrada válido"
 
-#: glapseGUI/glapseGUI.py:147
-msgid "Please, select a valid output folder"
-msgstr "Por favor, elija un directorio de destino válido"
+#: glapseGUI/glapseGUI.py:266
+msgid "Poor"
+msgstr "Mala"
 
-#: data/glade/glapseGUI.glade.h:14
+#: data/glade/glapseGUI.glade.h:15
 msgid "Quality"
 msgstr "Calidad"
 
-#: data/glade/glapseGUI.glade.h:15
+#: data/glade/glapseGUI.glade.h:16
+msgid "Quality (bps)"
+msgstr "Calidad (bps)"
+
+#: data/glade/glapseGUI.glade.h:17
 msgid "Screenshots folder is not empty"
 msgstr "Directorio destino de capturas"
 
-#: glapseGUI/glapseGUI.py:91
+#: glapseGUI/glapseGUI.py:113
 msgid "Screenshots output folder"
 msgstr "Directorio destino de capturas"
 
-#: data/glade/glapseGUI.glade.h:16
+#: data/glade/glapseGUI.glade.h:18
 msgid "Stop"
 msgstr "Parar"
 
-#: data/glade/glapseGUI.glade.h:17
+#: data/glade/glapseGUI.glade.h:19
 msgid "Take screensots, glue them together"
 msgstr "Toma capturas de pantalla, pégalas en un vídeo"
 
-#: data/glade/glapseGUI.glade.h:18
+#: data/glade/glapseGUI.glade.h:20
 msgid "Take several screenshots and glue them together"
 msgstr "Toma capturas de pantalla, pégalas en un vídeo"
 
-#: data/glade/glapseGUI.glade.h:19
+#: data/glade/glapseGUI.glade.h:21
 msgid "Take shots"
 msgstr "Tomar capturas"
 
-#: glapseGUI/glapseGUI.py:167
+#: glapseGUI/glapseGUI.py:203
 msgid "Taking screenshots..."
 msgstr "Tomando capturas..."
 
-#: data/glade/glapseGUI.glade.h:20
+#: glapseGUI/glapseGUI.py:189
 msgid ""
-"The folder already has files following the naming pattern , taking "
+"The folder already has files following the naming pattern, taking "
 "screenshots may overwrite them. Do you want to continue?"
 msgstr ""
-"El directorio ya tiene ficheros con el patrón de nombrado, tomar"
-"nuevas capturas podría sobreescribirlos. ¿Quiere continuar?"
+"El directorio ya tiene ficheros con el patrón de nombrado, tomarnuevas "
+"capturas podría sobreescribirlos. ¿Quiere continuar?"
 
-#: glapseGUI/glapseGUI.py:104
+#: glapseGUI/glapseGUI.py:264
+msgid "Very bad"
+msgstr "Muy mala"
+
+#: glapseGUI/glapseGUI.py:128
 msgid "Video input folder"
 msgstr "Directorio de capturas"
 
-#: glapseGUI/glapseGUI.py:117
+#: glapseGUI/glapseGUI.py:143
 msgid "Video output file"
 msgstr "Fichero de vídeo"
 
-#: data/glade/glapseGUI.glade.h:21
-msgid "gLapse v0.1"
-msgstr "gLapse v0.1"
+#: data/glade/glapseGUI.glade.h:22
+msgid "gLapse v0.2"
+msgstr "gLapse v0.2"
+
+#~ msgid "Please, select a valid output folder"
+#~ msgstr "Por favor, elija un directorio de destino válido"

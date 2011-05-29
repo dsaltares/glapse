@@ -6,7 +6,7 @@ import os
 class Configuration:
 	
 	def __init__(self):
-		self.version = 0.1
+		self.version = 0.2
 		#self.dataDir = '/usr/share/glapse/data'
 		#self.libDir = '/usr/lib/glapse'
 		#self.binPath = '/usr/bin/glapse'
