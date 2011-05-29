@@ -226,6 +226,7 @@ class GlapseMainGUI:
 	videoInput = self.txtVideoInput.get_text()
 	videoOutput = self.txtVideoOutput.get_text()
 	videoFPS = self.scaleVideoFPS.get_value()
+	videoQuality = self.scaleVideoQuality.get_value()
 	
 	checkList = True
 	
@@ -255,7 +256,7 @@ class GlapseMainGUI:
 	    # Chanche status bar
 	    self.lblStatus.set_text(_('Creating video...'))
 	    # Call controller
-	    self.controller.makeVideo(self, videoInput,videoOutput, videoFPS)
+	    self.controller.makeVideo(self, videoInput,videoOutput, videoFPS, videoQuality)
 	    
     def onScaleVideoQualityChange(self, widget):
 	# Adjust label quality name

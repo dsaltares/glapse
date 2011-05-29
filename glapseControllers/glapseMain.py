@@ -61,9 +61,9 @@ class GlapseMain:
         self.thread.join()
         
         
-    def makeVideo(self, gui, inputFolder, outputFile, FPS):
+    def makeVideo(self, gui, inputFolder, outputFile, FPS, quality):
         # Build ffmpeg command
-        command = 'ffmpeg -y -r ' + str(FPS) + ' -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg ' + outputFile
+        command = 'ffmpeg -y -r ' + str(FPS) + ' -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -b ' + str(quality) + ' ' + outputFile
         
         print command
         
