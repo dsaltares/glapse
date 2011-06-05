@@ -63,7 +63,7 @@ class GlapseMain:
         
     def makeVideo(self, gui, inputFolder, outputFile, FPS, quality):
         # Build ffmpeg command
-        command = 'ffmpeg -y -r ' + str(FPS) + ' -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -b ' + str(quality) + ' ' + outputFile
+        command = 'ffmpeg -y -r ' + str(FPS) + ' -vcodec copy -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -b ' + str(quality) + ' ' + outputFile
         
         print command
         
