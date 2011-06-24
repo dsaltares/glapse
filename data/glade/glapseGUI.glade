@@ -242,7 +242,7 @@
                     <child>
                       <object class="GtkTable" id="table2">
                         <property name="visible">True</property>
-                        <property name="n_rows">5</property>
+                        <property name="n_rows">4</property>
                         <property name="n_columns">3</property>
                         <child>
                           <object class="GtkEntry" id="txtVideoInput">
@@ -327,48 +327,6 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btnMakeVideo">
-                            <property name="label" translatable="yes">Make video</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <signal name="clicked" handler="onBtnMakeVideoClicked"/>
-                          </object>
-                          <packing>
-                            <property name="left_attach">1</property>
-                            <property name="right_attach">2</property>
-                            <property name="top_attach">4</property>
-                            <property name="bottom_attach">5</property>
-                            <property name="x_options"></property>
-                            <property name="y_options"></property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkHScale" id="scaleVideoQuality">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="adjustment">adjVideoQuality</property>
-                            <property name="digits">0</property>
-                            <signal name="value_changed" handler="onScaleVideoQualityChange"/>
-                          </object>
-                          <packing>
-                            <property name="left_attach">1</property>
-                            <property name="right_attach">2</property>
-                            <property name="top_attach">3</property>
-                            <property name="bottom_attach">4</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="lblVideoQuality">
-                            <property name="visible">True</property>
-                            <property name="label" translatable="yes">Quality (bps)</property>
-                          </object>
-                          <packing>
-                            <property name="top_attach">3</property>
-                            <property name="bottom_attach">4</property>
-                          </packing>
-                        </child>
-                        <child>
                           <object class="GtkHScale" id="scaleVideoFPS">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -383,25 +341,30 @@
                           </packing>
                         </child>
                         <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="lblQualityName">
+                          <object class="GtkButton" id="btnMakeVideo">
+                            <property name="label" translatable="yes">Make video</property>
                             <property name="visible">True</property>
-                            <property name="label" translatable="yes">Normal</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="onBtnMakeVideoClicked"/>
                           </object>
                           <packing>
-                            <property name="left_attach">2</property>
-                            <property name="right_attach">3</property>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
                             <property name="top_attach">3</property>
                             <property name="bottom_attach">4</property>
+                            <property name="x_options"></property>
+                            <property name="y_options"></property>
                           </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
                         </child>
                       </object>
                     </child>

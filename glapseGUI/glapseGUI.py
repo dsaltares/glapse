@@ -65,7 +65,6 @@ class GlapseMainGUI:
 	self.txtVideoOutput = builder.get_object('txtVideoOutput')
         self.scaleVideoFPS = builder.get_object('scaleVideoFPS')
         self.btnMakeVideo = builder.get_object('btnMakeVideo')
-        self.scaleVideoQuality = builder.get_object('scaleVideoQuality')
 	self.lblQualityName = builder.get_object('lblQualityName')
 	
 	
@@ -86,14 +85,13 @@ class GlapseMainGUI:
 	# Default path
 	self.txtScrOutput.set_text(os.getenv('HOME') + os.sep + 'glapse')
 	self.txtVideoInput.set_text(os.getenv('HOME') + os.sep + 'glapse')
-	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'glapse' + os.sep + 'timelapse.mp4')
+	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'glapse' + os.sep + 'timelapse.avi')
 
         
         # Set default scale values
         self.scaleScrQuality.set_value(50)
         self.scaleScrInterval.set_value(10)
         self.scaleVideoFPS.set_value(5)
-        self.scaleVideoQuality.set_value(10000)
 
 	# Disable stop screenshots
 	self.btnScrStop.set_sensitive(False)
@@ -144,11 +142,11 @@ class GlapseMainGUI:
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
         chooser.set_current_folder(os.getenv('HOME'))
-	chooser.set_current_name('timelapse.mp4')
+	chooser.set_current_name('timelapse.avi')
 	
 	fileFilter = gtk.FileFilter()
-	fileFilter.add_pattern('*.mp4')
-	fileFilter.set_name(_('MP4 files'))
+	fileFilter.add_pattern('*.avi')
+	fileFilter.set_name(_('AVI files'))
 	
 	chooser.add_filter(fileFilter)
 	
@@ -226,7 +224,6 @@ class GlapseMainGUI:
 	videoInput = self.txtVideoInput.get_text()
 	videoOutput = self.txtVideoOutput.get_text()
 	videoFPS = self.scaleVideoFPS.get_value()
-	videoQuality = self.scaleVideoQuality.get_value()
 	
 	checkList = True
 	
@@ -256,20 +253,7 @@ class GlapseMainGUI:
 	    # Chanche status bar
 	    self.lblStatus.set_text(_('Creating video...'))
 	    # Call controller
-	    self.controller.makeVideo(self, videoInput,videoOutput, videoFPS, videoQuality)
-	    
-    def onScaleVideoQualityChange(self, widget):
-	# Adjust label quality name
-	if self.scaleVideoQuality.get_value() < 4560:
-	    self.lblQualityName.set_text(_('Very bad'))
-	elif self.scaleVideoQuality.get_value() < 9120:
-	    self.lblQualityName.set_text(_('Poor'))
-	elif self.scaleVideoQuality.get_value() < 13680:
-	    self.lblQualityName.set_text(_('Normal'))
-	elif self.scaleVideoQuality.get_value() < 18240:
-	    self.lblQualityName.set_text(_('Good'))
-	else:
-	    self.lblQualityName.set_text(_('Best'))
+	    self.controller.makeVideo(self, videoInput,videoOutput, videoFPS)
 	
 	
     def onMakeVideoFinished(self):
