@@ -49,7 +49,7 @@ if sys.platform == 'linux2':
         except:
             pass
 
-# Find out the location of glapse's working directory, and insert it to sys.path
+# Find out the location of glapses working directory, and insert it to sys.path
 basedir = os.path.dirname(os.path.realpath(__file__))
 if not os.path.exists(os.path.join(basedir, "glapse.py")):
     cwd = os.getcwd()

@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: glapse 0.2\n"
+"Project-Id-Version: glapse 0.3\n"
 "Report-Msgid-Bugs-To: david.saltares@gmail.com\n"
-"POT-Creation-Date: 2011-05-29 16:06+0200\n"
+"POT-Creation-Date: 2011-06-24 18:42+0200\n"
 "PO-Revision-Date: 2011-06-05 13:40+0200\n"
 "Last-Translator: Juan José Bernal Rodríguez <juanjose.bernal.rodriguez@gmail."
 "com>\n"
@@ -20,19 +20,19 @@ msgstr ""
 
 #: data/glade/glapseGUI.glade.h:1
 msgid "(©) David Saltares Márquez 2011"
-msgstr ""
+msgstr "(©) David Saltares Márquez 2011"
 
-#: glapseGUI/glapseGUI.py:237 glapseGUI/glapseGUI.py:247
+#: glapseGUI/glapseGUI.py:233 glapseGUI/glapseGUI.py:243
 #, python-format
 msgid "<b>%s does not exist</b>"
 msgstr "<b>%s対象先のフォルダがありません</b>"
 
-#: glapseGUI/glapseGUI.py:302
+#: glapseGUI/glapseGUI.py:285
 #, python-format
 msgid "<b>%s was not found</b>"
 msgstr "<b>%sは見つかりませんでした</b>"
 
-#: glapseGUI/glapseGUI.py:178
+#: glapseGUI/glapseGUI.py:175
 #, python-format
 msgid "<b>%s</b> does not exists, do you want to create it?"
 msgstr ""
@@ -51,19 +51,15 @@ msgstr "<b>動画</b>"
 msgid "About"
 msgstr "情報"
 
-#: glapseGUI/glapseGUI.py:272
-msgid "Best"
-msgstr "最高"
-
 #: data/glade/glapseGUI.glade.h:5
 msgid "Choose..."
 msgstr "参考···"
 
-#: glapseGUI/glapseGUI.py:257
+#: glapseGUI/glapseGUI.py:253
 msgid "Creating video..."
 msgstr "動画を書き出しています···"
 
-#: glapseGUI/glapseGUI.py:301
+#: glapseGUI/glapseGUI.py:284
 msgid "Dependencies error"
 msgstr "依存エラー"
 
@@ -75,16 +71,12 @@ msgstr "エラー"
 msgid "FPS"
 msgstr "フレームレート"
 
-#: glapseGUI/glapseGUI.py:236 glapseGUI/glapseGUI.py:246
+#: glapseGUI/glapseGUI.py:232 glapseGUI/glapseGUI.py:242
 msgid "Folder not found"
 msgstr "フォルダは見つかりませんでした"
 
-#: glapseGUI/glapseGUI.py:270
-msgid "Good"
-msgstr "良い"
-
-#: data/glade/glapseGUI.glade.h:8 glapseGUI/glapseGUI.py:214
-#: glapseGUI/glapseGUI.py:277
+#: data/glade/glapseGUI.glade.h:8 glapseGUI/glapseGUI.py:211
+#: glapseGUI/glapseGUI.py:260
 msgid "Idle"
 msgstr "アイドル"
 
@@ -96,7 +88,7 @@ msgstr "入力フォルダ"
 msgid "Interval (s)"
 msgstr "間隔（秒）"
 
-#: glapseGUI/glapseGUI.py:151
+#: glapseGUI/glapseGUI.py:148
 msgid "MP4 files"
 msgstr "MP4ファイル"
 
@@ -104,67 +96,55 @@ msgstr "MP4ファイル"
 msgid "Make video"
 msgstr "動画を作る"
 
-#: data/glade/glapseGUI.glade.h:12 glapseGUI/glapseGUI.py:268
-msgid "Normal"
-msgstr "中"
-
-#: data/glade/glapseGUI.glade.h:13
+#: data/glade/glapseGUI.glade.h:12
 msgid "Output file"
 msgstr "出力ファイル名"
 
-#: data/glade/glapseGUI.glade.h:14
+#: data/glade/glapseGUI.glade.h:13
 msgid "Output folder"
 msgstr "出力フォルダ"
 
-#: glapseGUI/glapseGUI.py:303
+#: glapseGUI/glapseGUI.py:286
 msgid "Please, install the package and launch gLapse again"
 msgstr "パッケージをインストールしてから、glapseを改めて実行してください"
 
-#: glapseGUI/glapseGUI.py:238 glapseGUI/glapseGUI.py:248
+#: glapseGUI/glapseGUI.py:234 glapseGUI/glapseGUI.py:244
 msgid "Please, select a valid input folder"
 msgstr "有効な入力フォルダを選択してください"
 
-#: glapseGUI/glapseGUI.py:266
-msgid "Poor"
-msgstr "悪い"
-
-#: data/glade/glapseGUI.glade.h:15
+#: data/glade/glapseGUI.glade.h:14
 msgid "Quality"
 msgstr "画質"
 
-#: data/glade/glapseGUI.glade.h:16
-msgid "Quality (bps)"
-msgstr "ビットレート/画質"
-
-#: data/glade/glapseGUI.glade.h:17
+#: data/glade/glapseGUI.glade.h:15
 msgid "Screenshots folder is not empty"
 msgstr "スクリーンショット·フォルダは空ではありません"
 
-#: glapseGUI/glapseGUI.py:113
+#: glapseGUI/glapseGUI.py:110
 msgid "Screenshots output folder"
 msgstr "スクリーンショット出力フォルダの選択"
 
-#: data/glade/glapseGUI.glade.h:18
+#: data/glade/glapseGUI.glade.h:16
 msgid "Stop"
 msgstr "停止"
 
-#: data/glade/glapseGUI.glade.h:19
+#: data/glade/glapseGUI.glade.h:17
 msgid "Take screensots, glue them together"
 msgstr "連番スクリーンショットを撮ったり、貼り付けたりして"
 
-#: data/glade/glapseGUI.glade.h:20
+#: data/glade/glapseGUI.glade.h:18
 msgid "Take several screenshots and glue them together"
 msgstr "連番スクリーンショットを撮ったり、貼り付けたりして"
 
-#: data/glade/glapseGUI.glade.h:21
+#: data/glade/glapseGUI.glade.h:19
 msgid "Take shots"
 msgstr "開始"
 
-#: glapseGUI/glapseGUI.py:203
+#: glapseGUI/glapseGUI.py:200
 msgid "Taking screenshots..."
 msgstr "連番スクリーンショットを撮っています···"
 
-#: glapseGUI/glapseGUI.py:189
+#: glapseGUI/glapseGUI.py:186
 msgid ""
 "The folder already has files following the naming pattern, taking "
 "screenshots may overwrite them. Do you want to continue?"
@@ -173,18 +153,32 @@ msgstr ""
 "ンショットを撮る場合ならば、ファイルを上書くことが可能です。それでもよろしい"
 "ですか？"
 
-#: glapseGUI/glapseGUI.py:264
-msgid "Very bad"
-msgstr "最低"
-
-#: glapseGUI/glapseGUI.py:128
+#: glapseGUI/glapseGUI.py:125
 msgid "Video input folder"
 msgstr "動画入力フォルダの選択"
 
-#: glapseGUI/glapseGUI.py:143
+#: glapseGUI/glapseGUI.py:140
 msgid "Video output file"
 msgstr "動画出力ファイル名の選択"
 
-#: data/glade/glapseGUI.glade.h:22
-msgid "gLapse v0.2"
-msgstr ""
+#: data/glade/glapseGUI.glade.h:20
+msgid "gLapse v0.3"
+msgstr "gLapse v0.3"
+
+#~ msgid "Best"
+#~ msgstr "最高"
+
+#~ msgid "Good"
+#~ msgstr "良い"
+
+#~ msgid "Normal"
+#~ msgstr "中"
+
+#~ msgid "Poor"
+#~ msgstr "悪い"
+
+#~ msgid "Quality (bps)"
+#~ msgstr "ビットレート/画質"
+
+#~ msgid "Very bad"
+#~ msgstr "最低"

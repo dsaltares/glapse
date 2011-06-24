@@ -65,7 +65,6 @@ class GlapseMainGUI:
 	self.txtVideoOutput = builder.get_object('txtVideoOutput')
         self.scaleVideoFPS = builder.get_object('scaleVideoFPS')
         self.btnMakeVideo = builder.get_object('btnMakeVideo')
-	self.lblQualityName = builder.get_object('lblQualityName')
 	
 	
 	self.dlgError = builder.get_object('dlgError')
@@ -85,7 +84,7 @@ class GlapseMainGUI:
 	# Default path
 	self.txtScrOutput.set_text(os.getenv('HOME') + os.sep + 'glapse')
 	self.txtVideoInput.set_text(os.getenv('HOME') + os.sep + 'glapse')
-	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'glapse' + os.sep + 'timelapse.avi')
+	self.txtVideoOutput.set_text(os.getenv('HOME') + os.sep + 'glapse' + os.sep + 'timelapse.mp4')
 
         
         # Set default scale values
@@ -142,11 +141,11 @@ class GlapseMainGUI:
 
         chooser = gtk.FileChooserDialog(title = title, parent = None, action = action, buttons = buttons, backend = None)
         chooser.set_current_folder(os.getenv('HOME'))
-	chooser.set_current_name('timelapse.avi')
+	chooser.set_current_name('timelapse.mp4')
 	
 	fileFilter = gtk.FileFilter()
-	fileFilter.add_pattern('*.avi')
-	fileFilter.set_name(_('AVI files'))
+	fileFilter.add_pattern('*.mp4')
+	fileFilter.set_name(_('MP4 files'))
 	
 	chooser.add_filter(fileFilter)
 	

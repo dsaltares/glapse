@@ -86,7 +86,7 @@ class GlapseMain:
         return False
 
     def _takeScreenshot(self):
-        # Run until we're done
+        # Run until were done
         while not self.done:
             # Build scrot command
             fileName = "%09d" % (self.currentShot)
