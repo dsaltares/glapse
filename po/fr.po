@@ -1,0 +1,161 @@
+# French translations for glapse package.
+# Copyright (C) 2011 THE glapse'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the glapse package.
+# David Saltares Márquez <david.saltares@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: glapse 0.3\n"
+"Report-Msgid-Bugs-To: david.saltares@gmail.com\n"
+"POT-Creation-Date: 2011-06-24 18:42+0200\n"
+"PO-Revision-Date: 2011-06-25 10:18+0200\n"
+"Last-Translator: David Saltares Márquez <david.saltares@gmail.com>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: data/glade/glapseGUI.glade.h:1
+msgid "(©) David Saltares Márquez 2011"
+msgstr "(©) David Saltares Márquez 2011"
+
+#: glapseGUI/glapseGUI.py:233 glapseGUI/glapseGUI.py:243
+#, python-format
+msgid "<b>%s does not exist</b>"
+msgstr "<b>%s n'existe pas</b>"
+
+#: glapseGUI/glapseGUI.py:285
+#, python-format
+msgid "<b>%s was not found</b>"
+msgstr "<b>%s n'a pas été trouvé</b>"
+
+#: glapseGUI/glapseGUI.py:175
+#, python-format
+msgid "<b>%s</b> does not exists, do you want to create it?"
+msgstr "<b>%s</b> n'existe pas, voulez-vous le créer"
+
+#: data/glade/glapseGUI.glade.h:2
+msgid "<b>Screenshots</b>"
+msgstr "<b>Screenshots</b>"
+
+#: data/glade/glapseGUI.glade.h:3
+msgid "<b>Video</b>"
+msgstr "<b>Vidéo</b>"
+
+#: data/glade/glapseGUI.glade.h:4
+msgid "About"
+msgstr "Á propos"
+
+#: data/glade/glapseGUI.glade.h:5
+msgid "Choose..."
+msgstr "Choisissez"
+
+#: glapseGUI/glapseGUI.py:253
+msgid "Creating video..."
+msgstr "Créer vidéo..."
+
+#: glapseGUI/glapseGUI.py:284
+msgid "Dependencies error"
+msgstr "Erreur de dépendances"
+
+#: data/glade/glapseGUI.glade.h:6
+msgid "Error"
+msgstr "Erreur"
+
+#: data/glade/glapseGUI.glade.h:7
+msgid "FPS"
+msgstr "FPS"
+
+#: glapseGUI/glapseGUI.py:232 glapseGUI/glapseGUI.py:242
+msgid "Folder not found"
+msgstr "Dossier non trouvé'"
+
+#: data/glade/glapseGUI.glade.h:8 glapseGUI/glapseGUI.py:211
+#: glapseGUI/glapseGUI.py:260
+msgid "Idle"
+msgstr "Inactifs"
+
+#: data/glade/glapseGUI.glade.h:9
+msgid "Input folder"
+msgstr "Dossier d'entrée'"
+
+#: data/glade/glapseGUI.glade.h:10
+msgid "Interval (s)"
+msgstr "Intervalle (s)"
+
+#: glapseGUI/glapseGUI.py:148
+msgid "MP4 files"
+msgstr "fichiers MP4"
+
+#: data/glade/glapseGUI.glade.h:11
+msgid "Make video"
+msgstr "Créer vidéo"
+
+#: data/glade/glapseGUI.glade.h:12
+msgid "Output file"
+msgstr "Fichier de sortie"
+
+#: data/glade/glapseGUI.glade.h:13
+msgid "Output folder"
+msgstr "Dossier de sortie"
+
+#: glapseGUI/glapseGUI.py:286
+msgid "Please, install the package and launch gLapse again"
+msgstr "S'il vous plait, installez le paquet et reboot gLapse un autre fois"
+
+#: glapseGUI/glapseGUI.py:234 glapseGUI/glapseGUI.py:244
+msgid "Please, select a valid input folder"
+msgstr "S'il vous plait, choissiez un dossier valable"
+
+#: data/glade/glapseGUI.glade.h:14
+msgid "Quality"
+msgstr "Qualité"
+
+#: data/glade/glapseGUI.glade.h:15
+msgid "Screenshots folder is not empty"
+msgstr "Le dossier des screenshots c'est pas vide"
+
+#: glapseGUI/glapseGUI.py:110
+msgid "Screenshots output folder"
+msgstr "Dossier de sortie pour les screenshots"
+
+#: data/glade/glapseGUI.glade.h:16
+msgid "Stop"
+msgstr "Stop"
+
+#: data/glade/glapseGUI.glade.h:17
+msgid "Take screensots, glue them together"
+msgstr "Prende des screenshots, les coller ensemble"
+
+#: data/glade/glapseGUI.glade.h:18
+msgid "Take several screenshots and glue them together"
+msgstr "Prende des screenshots et les coller ensemble"
+
+#: data/glade/glapseGUI.glade.h:19
+msgid "Take shots"
+msgstr "Pendre screenshots"
+
+#: glapseGUI/glapseGUI.py:200
+msgid "Taking screenshots..."
+msgstr "Prendre des screenshots..."
+
+#: glapseGUI/glapseGUI.py:186
+msgid ""
+"The folder already has files following the naming pattern, taking "
+"screenshots may overwrite them. Do you want to continue?"
+msgstr "Le dossier a dejá fichiers suivant le schéma de nommage, en prenant"
+" screenshots peuvent les remplacer. Voulez-vous continuer?"
+
+#: glapseGUI/glapseGUI.py:125
+msgid "Video input folder"
+msgstr "Dossier d'entrée pour vidéo"
+
+#: glapseGUI/glapseGUI.py:140
+msgid "Video output file"
+msgstr "Fichier de sortie por vidéo"
+
+#: data/glade/glapseGUI.glade.h:20
+msgid "gLapse v0.3"
+msgstr "gLapse v0.3"
