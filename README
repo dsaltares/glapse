@@ -1,5 +1,5 @@
 =====================================================
-=                    gLapse v0.1                    =
+=                    gLapse v0.3                    =
 =                                                   =
 =                       README                      =
 =====================================================
@@ -23,7 +23,7 @@ Version 0.3
 -   Improves video quality but now it is not configurable
 -   French translation
 -   Japanese translation
--   Updates the others translations
+-   Updates others translations
 -   Bugfixes
 
 Version 0.2
@@ -45,7 +45,7 @@ Version 0.1
 ===============
 
 If you can't use the downloadable Debian package [1] you must install all
-the dependencies manually. In order to execute gLapse v0.1 you must have
+the dependencies manually. In order to execute gLapse v0.3 you must have
 the following packages:
 
 - python (>= 2.6)
@@ -73,5 +73,5 @@ sudo make uninstall
 4. License
 ==========
 
-gLapse v0.1 is licensed under the terms of the GPL v3 license. For further
+gLapse v0.3 is licensed under the terms of the GPL v3 license. For further
 details check the LICENSE file distributed with this package.
