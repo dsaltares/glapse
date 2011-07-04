@@ -18,6 +18,21 @@ Twitter:            <http://twitter.com/siondream>
 1. Changelog
 ============
 
+Version 0.3
+
+-   Improves video quality but now it is not configurable
+-   French translation
+-   Japanese translation
+-   Updates the others translations
+-   Bugfixes
+
+Version 0.2
+-   Configurable video quality (very bad, bad, normal, good, best).
+-   Synchronized screenshots output and video input folders.
+-   Safe screenshot output folder.
+-   German translation.
+-   Changes spinbuttons for sliders.
+
 Version 0.1
 -   Takes screenshots at fixed intervals.
 -   Screenshot configuration: quality, interval.
