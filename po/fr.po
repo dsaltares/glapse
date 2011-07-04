@@ -34,7 +34,7 @@ msgstr "<b>%s n'a pas été trouvé</b>"
 #: glapseGUI/glapseGUI.py:175
 #, python-format
 msgid "<b>%s</b> does not exists, do you want to create it?"
-msgstr "<b>%s</b> n'existe pas, voulez-vous le créer"
+msgstr "<b>%s</b> n'existe pas, voulez-vous le créer?"
 
 #: data/glade/glapseGUI.glade.h:2
 msgid "<b>Screenshots</b>"
@@ -54,7 +54,7 @@ msgstr "Choisissez"
 
 #: glapseGUI/glapseGUI.py:253
 msgid "Creating video..."
-msgstr "Créer vidéo..."
+msgstr "En créant la vidéo..."
 
 #: glapseGUI/glapseGUI.py:284
 msgid "Dependencies error"
@@ -91,7 +91,7 @@ msgstr "fichiers MP4"
 
 #: data/glade/glapseGUI.glade.h:11
 msgid "Make video"
-msgstr "Créer vidéo"
+msgstr "Créer la vidéo"
 
 #: data/glade/glapseGUI.glade.h:12
 msgid "Output file"
@@ -107,7 +107,7 @@ msgstr "S'il vous plait, installez le paquet et reboot gLapse un autre fois"
 
 #: glapseGUI/glapseGUI.py:234 glapseGUI/glapseGUI.py:244
 msgid "Please, select a valid input folder"
-msgstr "S'il vous plait, choissiez un dossier valable"
+msgstr "S'il vous plait, choisissiez un dossier valable"
 
 #: data/glade/glapseGUI.glade.h:14
 msgid "Quality"
@@ -115,7 +115,7 @@ msgstr "Qualité"
 
 #: data/glade/glapseGUI.glade.h:15
 msgid "Screenshots folder is not empty"
-msgstr "Le dossier des screenshots c'est pas vide"
+msgstr "Le dossier des screenshots n’est pas vide"
 
 #: glapseGUI/glapseGUI.py:110
 msgid "Screenshots output folder"
@@ -139,22 +139,22 @@ msgstr "Pendre screenshots"
 
 #: glapseGUI/glapseGUI.py:200
 msgid "Taking screenshots..."
-msgstr "Prendre des screenshots..."
+msgstr "Prends des screenshots..."
 
 #: glapseGUI/glapseGUI.py:186
 msgid ""
 "The folder already has files following the naming pattern, taking "
 "screenshots may overwrite them. Do you want to continue?"
-msgstr "Le dossier a dejá fichiers suivant le schéma de nommage, en prenant"
+msgstr "Le dossier a déjà des fichiers qui suivent le schéma de nommage, en prenant"
 " screenshots peuvent les remplacer. Voulez-vous continuer?"
 
 #: glapseGUI/glapseGUI.py:125
 msgid "Video input folder"
-msgstr "Dossier d'entrée pour vidéo"
+msgstr "Dossier d'entrée pour la vidéo"
 
 #: glapseGUI/glapseGUI.py:140
 msgid "Video output file"
-msgstr "Fichier de sortie por vidéo"
+msgstr "Fichier de sortie pour la vidéo"
 
 #: data/glade/glapseGUI.glade.h:20
 msgid "gLapse v0.3"
