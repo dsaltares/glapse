@@ -16,7 +16,12 @@ by Linux people but you can also try it! It doesn't have a huge variety of optio
 * Make video using saved screenshots with custom FPS.
 * Multilanguage: English, Spanish, German, French and Japanese.
 
-###how your work!###
+###Downloads###
+
+* [gLapse 0.3 Debian](https://github.com/downloads/siondream/glapse/glapse_0.3_all.deb)
+* [gLapse 0.3 other distros](https://github.com/downloads/siondream/glapse/glapse-0.3.tar.gz)
+
+###Show your work!###
 
 Do you want everybody to know how you've worked in your last project? Start taking
 desktop screenshots at a fix time interval and let the party begin! When you're finnished,
