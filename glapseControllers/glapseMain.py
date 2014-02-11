@@ -92,7 +92,7 @@ class GlapseMain:
             fileName = "%09d" % (self.currentShot)
             fileName = fileName + '.jpg'
             
-            command = 'scrot -q ' + str(self.quality) + ' ' + self.outputDir + os.sep + fileName
+            command = 'scrot -q ' + str(self.quality) + ' ' + self.outputDir + os.sep + fileName + " &"
             
             print 'Taking screenshot: ' + command + '...'
             
