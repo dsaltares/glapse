@@ -446,7 +446,7 @@
     <property name="version">v0.3</property>
     <property name="copyright" translatable="yes">(©) David Saltares Márquez 2011</property>
     <property name="comments" translatable="yes">Take screensots, glue them together</property>
-    <property name="website">http://code.google.com/p/glapse</property>
+    <property name="website">https://github.com/siondream/glapse</property>
     <property name="license">                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
