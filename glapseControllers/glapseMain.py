@@ -63,7 +63,7 @@ class GlapseMain:
         
     def makeVideo(self, gui, inputFolder, outputFile, FPS):
         # Build ffmpeg command
-        command = 'ffmpeg -y -r ' + str(FPS) + ' -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg ' + outputFile
+        command = 'avconv -y -r ' + str(FPS) + ' -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg ' + outputFile
         
         if len(outputFile) <= 4 or outputFile[-4:] != ".avi":
             command = command + '.avi'

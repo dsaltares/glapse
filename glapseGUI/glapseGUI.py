@@ -277,7 +277,7 @@ class GlapseMainGUI:
     
     def checkDependencies(self):
 	# Check wether all dependencies are installed or not
-	dependencies = ('ffmpeg', 'scrot')
+	dependencies = ('avconv', 'scrot')
 	
 	for dependence in dependencies:
 	    if not self._which(dependence):
