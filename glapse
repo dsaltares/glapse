@@ -2,4 +2,4 @@
 
 cd /usr/lib/glapse/
 
-python glapse.py
+python2 glapse.py
