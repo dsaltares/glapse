@@ -61,19 +61,43 @@ class GlapseMain:
         self.thread.join()
         
         
-    def makeVideo(self, gui, inputFolder, outputFile, FPS):
-        # Build ffmpeg command
-        command = 'avconv -y -r ' + str(FPS) + ' -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg ' + outputFile
-        
-        if len(outputFile) <= 4 or outputFile[-4:] != ".avi":
-            command = command + '.avi'
-        
+    def makeVideo(self, gui, inputFolder, outputFile, FPS, quality_index):
+        # get quality for ffmpeg / avconv
+        quality_index = int(quality_index)
+        qualities = ['ultrafast',
+                     'superfast',
+                     'veryfast',
+                     'faster',
+                     'fast',
+                     'medium',
+                     'slow',
+                     'slower',
+                     'veryslow']
+        # get current quality from the list.
+        quality = qualities[int(quality_index)]
+        if quality_index>7 or quality_index==0:
+            # if the quality is either end, make it lossless
+            quality += ' -qp 0'
+
+        print("Quality: " + quality)
+        # Build ffmpeg/avconv command
+        command = ''
+        if gui._which('avconv'):
+            command = 'avconv -y -r ' + str(FPS) + ' -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -c:v libx264 -preset '+quality+' ' + outputFile
+        else:
+            command = 'ffmpeg -y -framerate ' + str(FPS) + ' -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -c:v libx264 -r 30 -preset '+quality+' ' + outputFile
+
+
         print(command)
+
+        # avi isnt really neccesary...
+        #if len(outputFile) <= 4 or outputFile[-4:] != ".avi":
+        #    command = command + '.avi'
+        
         
         # Create thread to run command
         videoThread = threading.Thread(target = self._makeVideoThread, args = (command, gui))
         videoThread.start()
-        
     
     def getPossibleOverwrite(self, output):
         regex = re.compile('[0-9]{' + str(self.numDigits) + '}.jpg')

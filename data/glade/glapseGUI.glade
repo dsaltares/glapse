@@ -731,12 +731,11 @@ Public License instead of this License.  But first, please read
     <property name="step_increment">1</property>
   </object>
   <object class="GtkAdjustment" id="adjVideoQuality">
-    <property name="lower">20</property>
-    <property name="upper">110</property>
-    <property name="value">100</property>
+    <property name="upper">9</property>
+    <property name="value">8</property>
     <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-    <property name="page_size">10</property>
+    <property name="page_increment">1</property>
+    <property name="page_size">1</property>
   </object>
   <object class="GtkWindow" id="wndGlapse">
     <property name="can_focus">False</property>
@@ -1013,6 +1012,12 @@ Public License instead of this License.  But first, please read
                           <placeholder/>
                         </child>
                         <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
                           <object class="GtkEntry" id="txtVideoInput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -1129,16 +1134,11 @@ Public License instead of this License.  But first, please read
                           </packing>
                         </child>
                         <child>
-                          <placeholder/>
-                        </child>
-                        <child>
-                          <placeholder/>
-                        </child>
-                        <child>
                           <object class="GtkHScale" id="scaleVideoQuality">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="adjustment">adjVideoQuality</property>
+                            <property name="lower_stepper_sensitivity">off</property>
                             <property name="round_digits">0</property>
                             <property name="digits">0</property>
                           </object>

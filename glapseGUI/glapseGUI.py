@@ -63,6 +63,7 @@ class GlapseMainGUI:
 		self.btnVideoOutput = builder.get_object('btnVideoOutput')
 		self.txtVideoOutput = builder.get_object('txtVideoOutput')
 		self.scaleVideoFPS = builder.get_object('scaleVideoFPS')
+		self.scaleVideoQuality = builder.get_object('scaleVideoQuality')
 		self.btnMakeVideo = builder.get_object('btnMakeVideo')
 		
 		
@@ -246,7 +247,7 @@ class GlapseMainGUI:
 			# Chanche status bar
 			self.lblStatus.set_text(_('Creating video...'))
 			# Call controller
-			self.controller.makeVideo(self, videoInput,videoOutput, videoFPS)
+			self.controller.makeVideo(self, videoInput,videoOutput, videoFPS, videoQuality)
 		
 	
 	def onMakeVideoFinished(self):
