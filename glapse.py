@@ -19,10 +19,10 @@
 #                                                                             #
 # Copyright (C) 2011, David Saltares Márquez, <david.saltares@gmail.com>      #
 ###############################################################################
+
 from gi.repository import Gtk
 from gi.repository import Gdk
 
-#from gi.repository import Gtk.glade
 import locale
 import gettext
 import os
@@ -72,8 +72,10 @@ gettext.textdomain(APP)
 gettext.bindtextdomain(APP, LANG)
 
 # Set Glade translation domain
-#Gtk.glade.textdomain(APP)
-#Gtk.glade.bindtextdomain(APP, LANG)
+
+# I didnt know how to get this working, is there a fix for this?
+#gtk.glade.textdomain(APP)
+#gtk.glade.bindtextdomain(APP, LANG)
 
 
 def main():

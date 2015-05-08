@@ -102,6 +102,7 @@ class GlapseMain:
     def getPossibleOverwrite(self, output):
         regex = re.compile('[0-9]{' + str(self.numDigits) + '}.jpg')
         
+ 
         for f in os.listdir(output):
             match = regex.match(f)
             if match != None:
