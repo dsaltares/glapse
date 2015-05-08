@@ -38,10 +38,10 @@ class GlapseMain:
         self.done = True
     
     def startScreenshots(self, output, quality, interval):
-        print 'Starting taking screenshots...'
-        print 'Output folder: ' + output
-        print 'Quality: ' + str(quality)
-        print 'Interval: ' + str(interval)
+        print('Starting taking screenshots...')
+        print('Output folder: ' + output)
+        print('Quality: ' + str(quality))
+        print('Interval: ' + str(interval))
         
         # Update attributes
         self.outputDir = output
@@ -56,7 +56,7 @@ class GlapseMain:
         
         
     def stopScreenshots(self):
-        print 'Stopped taking screenshots.'
+        print('Stopped taking screenshots.')
         self.done = True
         self.thread.join()
         
@@ -68,7 +68,7 @@ class GlapseMain:
         if len(outputFile) <= 4 or outputFile[-4:] != ".avi":
             command = command + '.avi'
         
-        print command
+        print(command)
         
         # Create thread to run command
         videoThread = threading.Thread(target = self._makeVideoThread, args = (command, gui))
@@ -94,12 +94,12 @@ class GlapseMain:
             
             command = 'scrot -q ' + str(self.quality) + ' ' + self.outputDir + os.sep + fileName + " &"
             
-            print 'Taking screenshot: ' + command + '...'
+            print('Taking screenshot: ' + command + '...')
             
             os.system(command)
             
             # Schedule next screenshot
-            print 'Scheduling next screenshot...'
+            print('Scheduling next screenshot...')
             self.currentShot = self.currentShot + 1
             time.sleep(self.interval)
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8  -*-
 
 ###############################################################################
@@ -19,9 +19,10 @@
 #                                                                             #
 # Copyright (C) 2011, David Saltares Márquez, <david.saltares@gmail.com>      #
 ###############################################################################
+from gi.repository import Gtk
+from gi.repository import Gdk
 
-import gtk
-import gtk.glade
+#from gi.repository import Gtk.glade
 import locale
 import gettext
 import os
@@ -71,8 +72,8 @@ gettext.textdomain(APP)
 gettext.bindtextdomain(APP, LANG)
 
 # Set Glade translation domain
-gtk.glade.textdomain(APP)
-gtk.glade.bindtextdomain(APP, LANG)
+#Gtk.glade.textdomain(APP)
+#Gtk.glade.bindtextdomain(APP, LANG)
 
 
 def main():
@@ -80,9 +81,9 @@ def main():
     glapse = glapseGUI.GlapseMainGUI()
     if glapse.checkDependencies():
         glapse.window.show()
-        gtk.gdk.threads_init()
-        gtk.main()
+        Gdk.threads_init()
+        Gtk.main()
     
 
 if __name__ == "__main__":
-	main()
+    main()
