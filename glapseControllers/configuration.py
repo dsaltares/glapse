@@ -8,11 +8,6 @@ class Configuration:
 	def __init__(self):
 		self.version = 0.3
 		
-		#self.dataDir = '/usr/share/glapse/data'
-		#self.libDir = '/usr/lib/glapse'
-		#self.binPath = '/usr/bin/glapse'
-		#self.langDir = '/usr/share/locale'
-		
 		self.dataDir = os.path.realpath(os.path.join(os.path.dirname(__file__), '../data'))
 		self.libDir = os.path.realpath(os.path.join(os.path.dirname(__file__), '../glapseControllers'))
 		self.binPath = os.path.realpath(os.path.join(os.path.dirname(__file__), '../'))
