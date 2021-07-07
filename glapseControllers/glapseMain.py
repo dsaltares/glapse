@@ -38,10 +38,10 @@ class GlapseMain:
         self.done = True
     
     def startScreenshots(self, output, quality, interval):
-        print 'Starting taking screenshots...'
-        print 'Output folder: ' + output
-        print 'Quality: ' + str(quality)
-        print 'Interval: ' + str(interval)
+        print('Starting taking screenshots...')
+        print('Output folder: ' + output)
+        print('Quality: ' + str(quality))
+        print('Interval: ' + str(interval))
         
         # Update attributes
         self.outputDir = output
@@ -56,28 +56,53 @@ class GlapseMain:
         
         
     def stopScreenshots(self):
-        print 'Stopped taking screenshots.'
+        print('Stopped taking screenshots.')
         self.done = True
         self.thread.join()
         
         
-    def makeVideo(self, gui, inputFolder, outputFile, FPS):
-        # Build ffmpeg command
-        command = 'avconv -y -r ' + str(FPS) + ' -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg ' + outputFile
+    def makeVideo(self, gui, inputFolder, outputFile, FPS, quality_index):
+        # get quality for ffmpeg / avconv
+        quality_index = int(quality_index)
+        qualities = ['ultrafast',
+                     'superfast',
+                     'veryfast',
+                     'faster',
+                     'fast',
+                     'medium',
+                     'slow',
+                     'slower',
+                     'veryslow']
+        # get current quality from the list.
+        quality = qualities[int(quality_index)]
+        if quality_index>7 or quality_index==0:
+            # if the quality is either end, make it lossless
+            quality += ' -qp 0'
+
+        print("Quality: " + quality)
+        # Build ffmpeg/avconv command
+        command = ''
+        if gui._which('avconv'):
+            command = 'avconv -y -r ' + str(FPS) + ' -f image2 -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -c:v libx264 -preset '+quality+' ' + outputFile
+        else:
+            command = 'ffmpeg -y -framerate ' + str(FPS) + ' -i ' + inputFolder + os.sep + '%0' + str(self.numDigits) + 'd.jpg -c:v libx264 -r 30 -preset '+quality+' ' + outputFile
+
+
+        print(command)
+
+        # avi isnt really neccesary...
+        #if len(outputFile) <= 4 or outputFile[-4:] != ".avi":
+        #    command = command + '.avi'
         
-        if len(outputFile) <= 4 or outputFile[-4:] != ".avi":
-            command = command + '.avi'
-        
-        print command
         
         # Create thread to run command
         videoThread = threading.Thread(target = self._makeVideoThread, args = (command, gui))
         videoThread.start()
-        
     
     def getPossibleOverwrite(self, output):
         regex = re.compile('[0-9]{' + str(self.numDigits) + '}.jpg')
         
+ 
         for f in os.listdir(output):
             match = regex.match(f)
             if match != None:
@@ -94,12 +119,12 @@ class GlapseMain:
             
             command = 'scrot -q ' + str(self.quality) + ' ' + self.outputDir + os.sep + fileName + " &"
             
-            print 'Taking screenshot: ' + command + '...'
+            print('Taking screenshot: ' + command + '...')
             
             os.system(command)
             
             # Schedule next screenshot
-            print 'Scheduling next screenshot...'
+            print('Scheduling next screenshot...')
             self.currentShot = self.currentShot + 1
             time.sleep(self.interval)
 
